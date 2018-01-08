@@ -1,0 +1,31 @@
+.wolf-events-table {
+  margin-bottom: 44px;
+}
+.wolf-events-table .we-table {
+  display: table;
+  width: 100%;
+}
+.wolf-events-table .we-table-cell {
+  padding: 15px 5px;
+  display: table-cell;
+  min-height: 50px;
+  vertical-align: middle;
+}
+.wolf-events-table .we-list-event.we-cancelled {
+  opacity: .44;
+}
+.wolf-events-table .we-date {
+  width: 100px;
+}
+.wolf-events-table .we-date .we-month,
+.wolf-events-table .we-date .we-day {
+  display: block;
+}
+.wolf-events-table .we-facebook {
+  width: 50px;
+  text-align: center;
+}
+.wolf-events-table .we-action {
+  width: 200px;
+  text-align: right;
+}
