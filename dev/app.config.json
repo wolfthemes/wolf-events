@@ -1,6 +1,6 @@
 {
-	"version" : "1.0.8",
-	"updated" : "2018-01-08",
+	"version" : "1.1.1",
+	"updated" : "2018-05-07",
 	"slug" : "wolf-events",
 	"textdomain" : "wolf-events",
 	"name" : "Wolf Events",
@@ -13,7 +13,7 @@
 	"author" : "WolfThemes",
 	"authorURI" : "http://wolfthemes.com",
 	"requires" : "4.4.1",
-	"tested" : "4.9.1",
+	"tested" : "4.9.5",
 	"root" : "..",
 	"cssPath" : "../assets/css",
 	"jsPath" : "../assets/js",

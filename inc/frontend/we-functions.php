@@ -66,7 +66,7 @@ function we_sanitize_iframe( $iframe ) {
  */
 function we_get_iframe(  $iframe ) {
 
-	if ( preg_match( '/src=("|\')?([a-zA-Z0-9:\/\'?!=.+%-]+)("|\')?"/', $iframe, $match ) ) {
+	if ( preg_match( '/src=("|\')?([a-zA-Z0-9:\/\'?!=.+%-_]+)("|\')?"/', $iframe, $match ) ) {
 
 		if ( isset( $match[2] ) ) {
 			$src = $match[2];

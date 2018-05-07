@@ -1,3 +1,15 @@
+#### 7th May 2018 - Version 1.1.1
+
+* Tweak: Add post state in admin
+
+#### 12th April 2018 - Version 1.1.0
+
+* Tweak: Improve GMap iframe src attribute regex
+
+#### 23th March 2018 - Version 1.0.9
+
+* Tweak: Add post state in admin
+
 #### 8th January 2018 - Version 1.0.8
 
 * Tweak: Be less restrictive with time format

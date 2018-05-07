@@ -35,3 +35,21 @@ function we_set_custom_post_types_admin_order( $wp_query ) {
 	}
 }
 add_filter( 'pre_get_posts', 'we_set_custom_post_types_admin_order' );
+
+/**
+ * Display archive page state
+ *
+ * @param array $states
+ * @param object $post
+ * @return array $states
+ */
+function we_custom_post_states( $states, $post ) { 
+
+	if ( 'page' == get_post_type( $post->ID ) && absint( $post->ID ) === wolf_events_get_page_id() ) {
+
+		$states[] = esc_html__( 'Events Page' );
+	} 
+
+	return $states;
+}
+add_filter( 'display_post_states', 'we_custom_post_states', 10, 2 );
