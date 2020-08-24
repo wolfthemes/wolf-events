@@ -570,13 +570,35 @@ class WE_Admin {
 	 */
 	public function plugin_update() {
 
-		$plugin_slug = WE_SLUG;
-		$plugin_path = WE_PATH;
-		$remote_path = WE_UPDATE_URL . '/' . $plugin_slug;
-		$plugin_data = get_plugin_data( WE_DIR . '/' . WE_SLUG . '.php' );
-		$current_version = $plugin_data['Version'];
-		include_once( 'class-we-update.php');
-		new WE_Update( $current_version, $remote_path, $plugin_path );
+		// $plugin_slug = WE_SLUG;
+		// $plugin_path = WE_PATH;
+		// $remote_path = WE_UPDATE_URL . '/' . $plugin_slug;
+		// $plugin_data = get_plugin_data( WE_DIR . '/' . WE_SLUG . '.php' );
+		// $current_version = $plugin_data['Version'];
+		// include_once( 'class-we-update.php');
+		// new WE_Update( $current_version, $remote_path, $plugin_path );
+
+		include_once 'updater.php';
+
+		define( 'WP_GITHUB_FORCE_UPDATE', true );
+
+		$repo = 'wolfthemes/wolf-events';
+
+		$config = array(
+			'slug' => plugin_basename( __FILE__ ),
+			'proper_folder_name' => 'wolf-events',
+			'api_url' => 'https://api.github.com/repos/' . $repo . '',
+			'raw_url' => 'https://raw.github.com/' . $repo . '/master',
+			'github_url' => 'https://github.com/' . $repo . '',
+			'zip_url' => 'https://github.com/' . $repo . '/archive/master.zip',
+			'sslverify' => true,
+			'requires' => '5.0',
+			'tested' => '5.5',
+			'readme' => 'README.md',
+			'access_token' => '',
+		);
+
+		new WP_GitHub_Updater( $config );
 	}
 } // end class
 

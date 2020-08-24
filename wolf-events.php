@@ -3,7 +3,7 @@
  * Plugin Name: Wolf Events
  * Plugin URI: https://wlfthm.es/wolf-events
  * Description: A Plugin to Manage your Events
- * Version: 1.2.1
+ * Version: 1.2.0
  * Author: WolfThemes
  * Author URI: https://wolfthemes.com
  * Requires at least: 5.0
