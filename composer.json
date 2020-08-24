@@ -1,0 +1,16 @@
+{
+    "name": "wolfthemes/wolf-events",
+    "description": "A plugin to manage your events",
+	"type": "wordpress-plugin",
+	"homepage": "https://github.com/wolfthemes/wolf-events",
+    "authors": [
+        {
+            "name": "WolfThemes",
+			"email": "contact@wolfthemes.com",
+			"homepage": "https://wolfthemes.com"
+        }
+    ],
+    "require": {
+		"php": ">=5.6"
+	}
+}
