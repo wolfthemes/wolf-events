@@ -50,7 +50,7 @@ class WE_Admin {
 		//add_filter( 'plugin_action_links_' . plugin_basename( WE_PATH ), array( $this, 'settings_action_links' ) );
 
 		// Plugin update notifications
-		add_action( 'admin_init', array( $this, 'plugin_update' ) );
+		//add_action( 'admin_init', array( $this, 'plugin_update' ) );
 
 		// Check if tour dates posts exist
 		add_action( 'admin_notices', array( $this, 'wtd_update' ) );
@@ -588,7 +588,7 @@ class WE_Admin {
 			'slug' => plugin_basename( __FILE__ ),
 			'proper_folder_name' => 'wolf-events',
 			'api_url' => 'https://api.github.com/repos/' . $repo . '',
-			'raw_url' => 'https://raw.github.com/' . $repo . '/master',
+			'raw_url' => 'https://raw.github.com/' . $repo . '/master/',
 			'github_url' => 'https://github.com/' . $repo . '',
 			'zip_url' => 'https://github.com/' . $repo . '/archive/master.zip',
 			'sslverify' => true,
