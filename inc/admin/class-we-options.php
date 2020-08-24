@@ -1,11 +1,11 @@
 <?php
 /**
- * %NAME% Options.
+ * Wolf Events Options.
  *
  * @class WE_Options
- * @author %AUTHOR%
+ * @author WolfThemes
  * @category Admin
- * @package %PACKAGENAME%/Admin
+ * @package WolfEvents/Admin
  * @version %VERSION%
  */
 

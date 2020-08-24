@@ -1,12 +1,12 @@
 <?php
 /**
- * %NAME% register metaboxes
+ * Wolf Events register metaboxes
  *
  * Register metaboxes for event posts
  *
- * @author %AUTHOR%
+ * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Admin
+ * @package WolfEvents/Admin
  * @version %VERSION%
  */
 
@@ -123,6 +123,12 @@ $metabox = array(
 			),
 
 			array(
+				'label'	=> esc_html__( 'Bandsinwown event page', '%TEXTDOMAIN%' ),
+				'id'	=> '_wolf_event_bit',
+				'type'	=> 'url',
+			),
+
+			array(
 				'label'	=> esc_html__( 'Buy Ticket link', '%TEXTDOMAIN%' ),
 				'id'	=> '_wolf_event_ticket',
 				'desc'   => 'http://www.example.com',
@@ -132,6 +138,12 @@ $metabox = array(
 			array(
 				'label'	=> esc_html__( 'Price (e.g : $15)', '%TEXTDOMAIN%' ),
 				'id'	=> '_wolf_event_price',
+				'type'	=> 'text',
+			),
+
+			array(
+				'label'	=> esc_html__( 'Currency (e.g : USD)', '%TEXTDOMAIN%' ),
+				'id'	=> '_wolf_event_currency',
 				'type'	=> 'text',
 			),
 

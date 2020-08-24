@@ -1,12 +1,12 @@
 <?php
 /**
- * %NAME% Template Hooks
+ * Wolf Events Template Hooks
  *
- * Action/filter hooks used for %NAME% functions/templates
+ * Action/filter hooks used for Wolf Events functions/templates
  *
- * @author %AUTHOR%
+ * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Templates
+ * @package WolfEvents/Templates
  * @version %VERSION%
  */
 

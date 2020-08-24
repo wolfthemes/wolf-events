@@ -3,7 +3,7 @@
  */
 module.exports = {
 	build : {
-		src: [ 
+		src: [
 			'../pack/<%= app.slug %>/**/*.php',
 			'../pack/<%= app.slug %>/assets/js/*.js',
 			'../pack/<%= app.slug %>/assets/js/min/*.js',
@@ -16,11 +16,11 @@ module.exports = {
 				to: '<%= version %>'
 			},
 			{
-				from: '%NAME%',
+				from: 'Wolf Events',
 				to: '<%= app.name %>'
 			},
 			{
-				from: '%PACKAGENAME%',
+				from: 'WolfEvents',
 				to: '<%= app.packagename %>'
 			},
 			{
@@ -68,7 +68,7 @@ module.exports = {
 				to: '<%= app.tags %>'
 			},
 			{
-				from: '%AUTHOR%',
+				from: 'WolfThemes',
 				to: '<%= app.author %>'
 			},
 			{
@@ -88,7 +88,7 @@ module.exports = {
 				to: '<%= version %>'
 			},
 			{
-				from: '%NAME%',
+				from: 'Wolf Events',
 				to: '<%= app.name %>'
 			},
 			{
@@ -133,7 +133,7 @@ module.exports = {
 				to: '<%= app.tags %>'
 			},
 			{
-				from: '%AUTHOR%',
+				from: 'WolfThemes',
 				to: '<%= app.author %>'
 			},
 			{

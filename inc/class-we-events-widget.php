@@ -4,9 +4,9 @@
  *
  * Displays the upcoming events
  *
- * @author %AUTHOR%
+ * @author WolfThemes
  * @category Widgets
- * @package %PACKAGENAME%/Widgets
+ * @package WolfEvents/Widgets
  * @version %VERSION%
  * @extends WP_Widget
  */
@@ -64,7 +64,7 @@ class WE_Events_Widget extends WP_Widget {
 		}
 
 		// do stuff
-		
+
 		echo $after_widget;
 	}
 
@@ -76,7 +76,7 @@ class WE_Events_Widget extends WP_Widget {
 	 * @param array $instance Current widget instance settings.
 	 */
 	public function form( $instance ) {
-		
+
 		$instance = wp_parse_args( (array) $instance, array(
 			'title'   => '',
 		) );

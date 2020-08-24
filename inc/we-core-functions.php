@@ -1,12 +1,12 @@
 <?php
 /**
- * %NAME% core functions
+ * Wolf Events core functions
  *
  * General core functions available on admin and frontend
  *
- * @author %AUTHOR%
+ * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Core
+ * @package WolfEvents/Core
  * @version %VERSION%
  */
 
@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @return string $date
  */
 function we_nice_date( $date ) {
-	return date( get_option( 'date_format' ), strtotime( $date ) );
+	return date_i18n( get_option( 'date_format' ), strtotime( $date ) );
 }
 
 /**

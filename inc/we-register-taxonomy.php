@@ -1,12 +1,12 @@
 <?php
 /**
- * %NAME% register taxonomy
+ * Wolf Events register taxonomy
  *
  * Register event taxonomy
  *
- * @author %AUTHOR%
+ * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Admin
+ * @package WolfEvents/Admin
  * @version %VERSION%
  */
 

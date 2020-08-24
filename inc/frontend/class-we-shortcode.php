@@ -1,9 +1,9 @@
 <?php
 /**
- * %NAME% Shortcode.
+ * Wolf Events Shortcode.
  *
  * @class WE_Shortcode
- * @author %AUTHOR%
+ * @author WolfThemes
  * @category Core
  * @package WolfPageBuilder/Shortcode
  * @version %VERSION%

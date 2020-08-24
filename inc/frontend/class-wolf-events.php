@@ -1,11 +1,11 @@
 <?php
 /**
- * %NAME% Frontend class.
+ * Wolf Events Frontend class.
  *
  * @class WE_Admin
- * @author %AUTHOR%
+ * @author WolfThemes
  * @category Frontend
- * @package %PACKAGENAME%/Frontend
+ * @package WolfEvents/Frontend
  * @version %VERSION%
  */
 
@@ -115,7 +115,7 @@ class WE_Frontend {
 				do_action( 'we_before_event_list', $args, $meta );
 
 				extract( $meta );
-				
+
 				include( WE_DIR . '/templates/event-list-item.php' );
 
 				do_action( 'we_after_event_list', $args, $meta );
@@ -181,6 +181,7 @@ class WE_Frontend {
 		$classes = array( 'we-list-event', 'we-table-row' );
 
 		$meta['facebook_url'] = get_post_meta( $post_id, '_wolf_event_fb', true );
+		$meta['bandsintown_url'] = get_post_meta( $post_id, '_wolf_event_bit', true );
 
 		// time
 		$time = get_post_meta( $post_id, '_wolf_event_time', true );
@@ -189,13 +190,15 @@ class WE_Frontend {
 		// start date
 		$start_date = get_post_meta( $post_id, '_wolf_event_start_date', true );
 		$meta['start_date'] = ( $start_date ) ? $start_date : '2020-01-01';
-		$meta['raw_start_date'] = $start_date . 'T' . $this->format_time( $time );
+		//$meta['raw_start_date'] = $start_date . 'T' . $this->format_time( $time );
+		$meta['raw_start_date'] = date_format( date_create( $start_date . 'T' . $this->format_time( $time ) ), DATE_ISO8601 );
 		$meta['formatted_start_date'] = $this->format_date( $start_date, $this->format_time( $time ) );
 
 		// end date
 		$end_date = get_post_meta( $post_id, '_wolf_event_end_date', true );
 		$meta['end_date'] = ( $end_date ) ? $end_date : '';
-		$meta['raw_end_date'] = ( $end_date ) ? $end_date . 'T' . $this->format_time( $time ) : '';
+		//$meta['raw_end_date'] = ( $end_date ) ? $end_date . 'T' . $this->format_time( $time ) : '';
+		$meta['raw_end_date'] = ( $end_date ) ? date_format( date_create( $end_date . 'T' . $this->format_time( $time ) ), DATE_ISO8601 ) : '';
 		$meta['formatted_end_date'] = ( $end_date ) ? $this->format_date( $end_date, $this->format_time( $time ) ) : '';
 
 		// place
@@ -220,6 +223,9 @@ class WE_Frontend {
 		$soldout = get_post_meta( $post_id, '_wolf_event_soldout', true );
 		$free = get_post_meta( $post_id, '_wolf_event_free', true );
 		$meta['ticket_url'] = get_post_meta( $post_id, '_wolf_event_ticket', true );
+		$meta['price'] = get_post_meta( $post_id, '_wolf_event_price', true );
+		$meta['currency'] = get_post_meta( $post_id, '_wolf_event_currency', true );
+		//$meta['ticket_url'] = get_post_meta( $post_id, '_wolf_event_ticket', true );
 		$meta['cancelled'] = get_post_meta( $post_id, '_wolf_event_cancel', true );
 		$meta['soldout'] = get_post_meta( $post_id, '_wolf_event_soldout', true );
 		$meta['free'] = get_post_meta( $post_id, '_wolf_event_free', true );
@@ -229,7 +235,8 @@ class WE_Frontend {
 		if ( ! $cancelled && ! $soldout && ! $free && $ticket_url ) {
 			$action_text = apply_filters( 'we_ticket_link_text', we_get_option( 'ticket_text', esc_html__( 'Tickets', '%TEXTDOMAIN%' ) ) );
 			$ticket_url_class = apply_filters( 'we_ticket_link_class', 'we-ticket-link' );
-			$action = '<a class="' . esc_attr( $ticket_url_class ) . '" href="' . esc_url( $ticket_url ) . '">' . sanitize_text_field( $action_text ) . '</a>';
+			$target = apply_filters( 'we_ticket_link_target', '_self' );
+			$action = '<a target="' . esc_attr( $target ) . '" class="' . esc_attr( $ticket_url_class ) . '" href="' . esc_url( $ticket_url ) . '">' . sanitize_text_field( $action_text ) . '</a>';
 		}
 
 		if ( $free && ! $cancelled && ! $soldout ) {
@@ -261,7 +268,7 @@ class WE_Frontend {
 	 * Format time (AM PM to 24hrs format if needed)
 	 */
 	public function format_time( $time ) {
-		
+
 		if ( ! $time ) {
 			return;
 		}
@@ -270,9 +277,9 @@ class WE_Frontend {
 		$time = preg_replace( '/[^AM|PM0-9:]+/', '', $time );
 
 		if ( preg_match( '[AM|PM]', $time ) ) {
-			
+
 			return date( 'H:i', strtotime( $time ) );
-		
+
 		} elseif ( $time ) {
 			return $time;
 		}
@@ -291,6 +298,7 @@ class WE_Frontend {
 		$meta['description'] = sanitize_text_field( $meta['description'] );
 		$meta['thumbnail_url'] = esc_url( $meta['thumbnail_url'] );
 		$meta['facebook_url'] = esc_url( $meta['facebook_url'] );
+		$meta['bandsintown_url'] = esc_url( $meta['bandsintown_url'] );
 		$meta['classes'] = sanitize_text_field( $meta['classes'] );
 		$meta['start_date'] = sanitize_text_field( $meta['start_date'] );
 		$meta['end_date'] = sanitize_text_field( $meta['end_date'] );
@@ -309,9 +317,12 @@ class WE_Frontend {
 		$meta['website'] = esc_url( $meta['website'] );
 		$meta['country'] = sanitize_text_field( $meta['country'] );
 		$meta['artist'] = wp_kses_post( $meta['artist'] );
-		$meta['country_short'] = sanitize_text_field( $meta['country_short'] );
+		$meta['country_short'] = esc_attr( $meta['country_short'] );
 		$meta['state'] = sanitize_text_field( $meta['state'] );
 		$meta['ticket_url'] = esc_url( $meta['ticket_url'] );
+		$meta['price'] = esc_attr( $meta['price'] );
+		$meta['formatted_price'] = preg_replace( '/[^0-9-.,]/', '', $meta['price'] );
+		$meta['currency'] = esc_attr( $meta['currency'] );
 		$meta['cancelled'] = boolval( $meta['cancelled'] );
 		$meta['soldout'] = boolval( $meta['soldout'] );
 		$meta['free'] = boolval( $meta['free'] );
@@ -337,6 +348,7 @@ class WE_Frontend {
 			'description' => '',
 			'thumbnail_url' => '',
 			'facebook_url' => '',
+			'bandsintown_url' => '',
 			'start_date' => '',
 			'end_date' => '',
 			'time' => '',
@@ -357,6 +369,9 @@ class WE_Frontend {
 			'country_short' => '',
 			'state' => '',
 			'ticket_url' => '',
+			'price' => '',
+			'formatted_price' => '',
+			'currency' => '',
 			'cancelled' => '',
 			'soldout' => '',
 			'free' => '',
@@ -371,19 +386,36 @@ class WE_Frontend {
 	 * @param string $date, bool $custom
 	 * @return string
 	 */
-	public function format_date( $date = null, $time = '00:00' ) {
+	public function format_date( $date = null, $time = '00:00', $date_format = 'custom' ) {
 
 		if ( ! $date ) {
 			return;
 		}
 
-		list( $day, $monthnbr, $year ) = explode( '-', $date );
-		$search = array( '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12' );
-		$replace = array( esc_html__( 'Jan', '%TEXTDOMAIN%' ), esc_html__( 'Feb', '%TEXTDOMAIN%' ), esc_html__( 'Mar', '%TEXTDOMAIN%' ), esc_html__( 'Apr', '%TEXTDOMAIN%' ), esc_html__( 'May', '%TEXTDOMAIN%' ), esc_html__( 'Jun', '%TEXTDOMAIN%' ), esc_html__( 'Jul', '%TEXTDOMAIN%' ), esc_html__( 'Aug', '%TEXTDOMAIN%' ), esc_html__( 'Sep', '%TEXTDOMAIN%' ), esc_html__( 'Oct', '%TEXTDOMAIN%' ), esc_html__( 'Nov', '%TEXTDOMAIN%' ), esc_html__( 'Dec', '%TEXTDOMAIN%' ) );
-		$month = str_replace( $search, $replace, $monthnbr );
-		$display = '<span class="we-month">' . $month . '</span><span class="we-day">' . $day . '</span>';
+		$output = '';
 
-		return apply_filters( 'we_formatted_date', $display, $date, $time );
+		$date_format = apply_filters( 'we_date_format', $date_format );
+
+		if ( 'custom' === $date_format ) {
+
+			list( $day, $monthnbr, $year ) = explode( '-', $date );
+			$search = array( '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12' );
+			$replace = array( esc_html__( 'Jan', '%TEXTDOMAIN%' ), esc_html__( 'Feb', '%TEXTDOMAIN%' ), esc_html__( 'Mar', '%TEXTDOMAIN%' ), esc_html__( 'Apr', '%TEXTDOMAIN%' ), esc_html__( 'May', '%TEXTDOMAIN%' ), esc_html__( 'Jun', '%TEXTDOMAIN%' ), esc_html__( 'Jul', '%TEXTDOMAIN%' ), esc_html__( 'Aug', '%TEXTDOMAIN%' ), esc_html__( 'Sep', '%TEXTDOMAIN%' ), esc_html__( 'Oct', '%TEXTDOMAIN%' ), esc_html__( 'Nov', '%TEXTDOMAIN%' ), esc_html__( 'Dec', '%TEXTDOMAIN%' ) );
+			$month = str_replace( $search, $replace, $monthnbr );
+
+			$custom_date_class = apply_filters( 'we_custom_date_class', 'wvc-bigtext' );
+
+			$output = '<span class="we-date-format-custom ' . esc_attr( $custom_date_class ) . '"><span class="we-month">' . $month . '</span><span class="we-day">' . $day . '</span></span>';
+
+		} elseif ( 'default' === $date_format ) {
+
+			$display = date_i18n( get_option( 'date_format' ), strtotime( $date ) );
+
+			$output = '<span class="we-date-format-default">' . $display .  '</span>';
+
+		}
+
+		return apply_filters( 'we_formatted_date', $output, $date, $time );
 	}
 
 	/**

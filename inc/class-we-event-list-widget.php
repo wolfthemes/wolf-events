@@ -4,9 +4,9 @@
  *
  * Displays an events list
  *
- * @author %AUTHOR%
+ * @author WolfThemes
  * @category Widgets
- * @package %PACKAGENAME%/Widgets
+ * @package WolfEvents/Widgets
  * @version %VERSION%
  * @extends WP_Widget
  */

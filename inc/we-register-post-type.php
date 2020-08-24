@@ -1,12 +1,12 @@
 <?php
 /**
- * %NAME% register post type
+ * Wolf Events register post type
  *
  * Register event post type
  *
- * @author %AUTHOR%
+ * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Admin
+ * @package WolfEvents/Admin
  * @version %VERSION%
  */
 

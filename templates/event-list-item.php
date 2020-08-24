@@ -2,13 +2,13 @@
 /**
  * Template to render the event in the event list.
  *
- * @author %AUTHOR%
+ * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Admin
+ * @package WolfEvents/Admin
  * @version %VERSION%
  */
 ?>
-<div class="<?php echo esc_attr( $classes );  ?>" itemscope itemtype="http://schema.org/Event">
+<div class="<?php echo esc_attr( $classes );  ?>" itemscope itemtype="http://schema.org/MusicEvent">
 	<?php
 		/**
 		 * we_event_list_item_start hook
@@ -26,7 +26,7 @@
 			<?php echo we_sanitize_date( $formatted_start_date ); ?>
 		<?php endif; ?>
 	</div><!-- .we-date -->
-	<div class="we-table-cell we-location" itemprop="location" itemscope itemtype="http://schema.org/Place">
+	<div class="we-table-cell we-location" itemprop="location" itemscope itemtype="http://schema.org/MusicVenue">
 		<span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
 			<?php if ( $city ) : ?>
 				<meta itemprop="addressLocality" content="<?php echo esc_attr( $city ); ?>">

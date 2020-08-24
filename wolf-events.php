@@ -1,42 +1,29 @@
 <?php
 /**
  * Plugin Name: Wolf Events
- * Plugin URI: %LINK%
- * Description: %DESCRIPTION%
- * Version: %VERSION%
- * Author: %AUTHOR%
- * Author URI: %AUTHORURI%
- * Requires at least: %REQUIRES%
- * Tested up to: %TESTED%
+ * Plugin URI: https://wlfthm.es/wolf-events
+ * Description: A Plugin to Manage your Events
+ * Version: 1.2.1
+ * Author: WolfThemes
+ * Author URI: https://wolfthemes.com
+ * Requires at least: 5.0
+ * Tested up to: 5.5
  *
  * Text Domain: %TEXTDOMAIN%
  * Domain Path: /languages/
  *
- * @package %PACKAGENAME%
+ * @package WolfEvents
  * @category Core
- * @author %AUTHOR%
+ * @author WolfThemes
  *
  * Being a free product, this plugin is distributed as-is without official support.
  * Verified customers however, who have purchased a premium theme
- * at http://themeforest.net/user/Wolf-Themes/portfolio?ref=Wolf-Themes
+ * at https://wlfthm.es/tf
  * will have access to support for this plugin in the forums
- * https://wolfthemes.ticksy.com/
- *
- * Copyright (C) 2013 Constantin Saguin
- * This WordPress Plugin is a free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * It is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- * See http://www.gnu.org/licenses/gpl-3.0.html
+ * https://wlfthm.es/help
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
-}
+defined( 'ABSPATH' ) || exit;
 
 if ( ! class_exists( 'Wolf_Events' ) ) {
 	/**
@@ -61,7 +48,7 @@ if ( ! class_exists( 'Wolf_Events' ) ) {
 		public $version = '%VERSION%';
 
 		/**
-		 * @var %NAME% The single instance of the class
+		 * @var Wolf Events The single instance of the class
 		 */
 		protected static $_instance = null;
 
@@ -73,7 +60,7 @@ if ( ! class_exists( 'Wolf_Events' ) ) {
 		/**
 		 * @var the support forum URL
 		 */
-		private $support_url = 'http://help.wolfthemes.com/';
+		private $support_url = 'https://wlfthm.es/help/';
 
 		/**
 		 * @var string
@@ -81,13 +68,13 @@ if ( ! class_exists( 'Wolf_Events' ) ) {
 		public $template_url;
 
 		/**
-		 * Main %NAME% Instance
+		 * Main Wolf Events Instance
 		 *
-		 * Ensures only one instance of %NAME% is loaded or can be loaded.
+		 * Ensures only one instance of Wolf Events is loaded or can be loaded.
 		 *
 		 * @static
 		 * @see WE()
-		 * @return %NAME% - Main instance
+		 * @return Wolf Events - Main instance
 		 */
 		public static function instance() {
 			if ( is_null( self::$_instance ) ) {
@@ -97,7 +84,7 @@ if ( ! class_exists( 'Wolf_Events' ) ) {
 		}
 
 		/**
-		 * %NAME% Constructor.
+		 * Wolf Events Constructor.
 		 */
 		public function __construct() {
 
@@ -219,7 +206,7 @@ if ( ! class_exists( 'Wolf_Events' ) ) {
 		}
 
 		/**
-		 * Function used to Init %NAME% Template Functions - This makes them pluggable by plugins and themes.
+		 * Function used to Init Wolf Events Template Functions - This makes them pluggable by plugins and themes.
 		 */
 		public function include_template_functions() {
 			include_once( 'inc/frontend/we-template-functions.php' );
@@ -242,7 +229,7 @@ if ( ! class_exists( 'Wolf_Events' ) ) {
 		}
 
 		/**
-		 * Init %NAME% when WordPress Initialises.
+		 * Init Wolf Events when WordPress Initialises.
 		 */
 		public function init() {
 			// Before init action
@@ -259,7 +246,6 @@ if ( ! class_exists( 'Wolf_Events' ) ) {
 
 				// Hooks
 				add_filter( 'template_include', array( $this, 'template_loader' ) );
-
 			}
 
 			// Hooks
@@ -307,7 +293,7 @@ if ( ! class_exists( 'Wolf_Events' ) ) {
 				$find[] = $file;
 				$find[] = $this->template_url . $file;
 
-			} elseif ( is_tax( 'artist' ) ) {
+			} elseif ( is_tax( 'we_artist' ) ) {
 
 				$term = get_queried_object();
 

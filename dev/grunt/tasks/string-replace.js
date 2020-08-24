@@ -14,7 +14,7 @@ module.exports = {
 					replacement: '<%= version %>'
 				},
 				{
-					pattern: '%NAME%',
+					pattern: 'Wolf Events',
 					replacement: '<%= app.name %>'
 				},
 				{
@@ -62,7 +62,7 @@ module.exports = {
 					replacement: '<%= app.tags %>'
 				},
 				{
-					pattern: '%AUTHOR%',
+					pattern: 'WolfThemes',
 					replacement: '<%= app.author %>'
 				},
 				{

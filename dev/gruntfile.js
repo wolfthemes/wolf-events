@@ -20,11 +20,8 @@ module.exports = function(grunt) {
 		pkg : grunt.file.readJSON('package.json'),
 		app : grunt.file.readJSON('app.config.json'),
 		version : grunt.option('target') || grunt.file.readJSON('app.config.json').version,
-		link : grunt.file.readJSON('app.config.json').link || 'http://wlfthm.es/mPJRk8',
-		shortlink : grunt.file.readJSON('app.config.json').shortlink || grunt.file.readJSON('app.config.json').link || 'http://wolfthemes.com/wordpress-plugins',
-		news : grunt.file.read('../html/news.html'),
-		info : grunt.file.read('../html/info.html'),
-		warning : grunt.file.read('../html/warning.html')
+		link : grunt.file.readJSON('app.config.json').link || 'https://github.com/wolfthemes/wolf-events',
+		shortlink : grunt.file.readJSON('app.config.json').shortlink || 'https://wlfthm.es/wolf-events'
 	};
 
 	grunt.util._.extend(config, loadConfig('./grunt/tasks/'));

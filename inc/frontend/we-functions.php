@@ -1,12 +1,12 @@
 <?php
 /**
- * %NAME% frontend functions
+ * Wolf Events frontend functions
  *
  * General functions available on frontend
  *
- * @author %AUTHOR%
+ * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Frontend
+ * @package WolfEvents/Frontend
  * @version %VERSION%
  */
 
@@ -124,6 +124,7 @@ function we_sanitize_action( $action ) {
 			'class' => array(),
 			'id' => array(),
 			'rel' => array(),
+			'target' => array(),
 			'itemprop' => array(),
 		),
 		'span' => array(

@@ -1,15 +1,13 @@
 <?php
 /**
- * %NAME% Uninstall
+ * Wolf Events Uninstall
  *
- * Uninstalling %NAME%
+ * Uninstalling Wolf Events
  *
- * @author %AUTHOR%
+ * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Uninstaller
- * @version %VERSION%
+ * @package WolfEvents/Uninstaller
+ * @version 1.0.0
  */
 
-if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
-	exit;
-}
+defined( 'ABSPATH' ) || exit;

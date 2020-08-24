@@ -1,11 +1,11 @@
 <?php
 /**
- * %NAME% Metaboxes.
+ * Wolf Events Metaboxes.
  *
  * @class WE_Admin_Metabox
- * @author %AUTHOR%
+ * @author WolfThemes
  * @category Admin
- * @package %PACKAGENAME%/Admin
+ * @package WolfEvents/Admin
  * @version %VERSION%
  */
 

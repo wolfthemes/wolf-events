@@ -1,12 +1,12 @@
 <?php
 /**
- * %NAME% admin functions
+ * Wolf Events admin functions
  *
  * General  functions available on admin.
  *
- * @author %AUTHOR%
+ * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Admin
+ * @package WolfEvents/Admin
  * @version %VERSION%
  */
 
@@ -43,12 +43,12 @@ add_filter( 'pre_get_posts', 'we_set_custom_post_types_admin_order' );
  * @param object $post
  * @return array $states
  */
-function we_custom_post_states( $states, $post ) { 
+function we_custom_post_states( $states, $post ) {
 
 	if ( 'page' == get_post_type( $post->ID ) && absint( $post->ID ) === wolf_events_get_page_id() ) {
 
 		$states[] = esc_html__( 'Events Page' );
-	} 
+	}
 
 	return $states;
 }

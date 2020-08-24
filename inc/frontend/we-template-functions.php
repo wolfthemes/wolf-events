@@ -1,12 +1,12 @@
 <?php
 /**
- * %NAME% template functions
+ * Wolf Events template functions
  *
  * Functions for the templating system.
  *
- * @author %AUTHOR%
+ * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Functions
+ * @package WolfEvents/Functions
  * @version %VERSION%
  */
 

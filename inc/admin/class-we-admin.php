@@ -1,11 +1,11 @@
 <?php
 /**
- * %NAME% Admin.
+ * Wolf Events Admin.
  *
  * @class WE_Admin
- * @author %AUTHOR%
+ * @author WolfThemes
  * @category Admin
- * @package %PACKAGENAME%/Admin
+ * @package WolfEvents/Admin
  * @version %VERSION%
  */
 
@@ -82,9 +82,11 @@ class WE_Admin {
 	 */
 	public function wtd_update() {
 
+		global $pagenow;
+
 		$is_tour_dates = class_exists( 'Wolf_Tour_Dates' );
 
-		// delete_option( '_wolf_events_tour_dates_updated' );
+		//delete_option( '_wolf_events_tour_dates_updated' );
 
 		if ( isset( $_GET['wolf_events_tour_dates_import'] ) || ! $is_tour_dates ) {
 			return;
@@ -94,19 +96,17 @@ class WE_Admin {
 		if ( isset( $_GET['skip_wolf_events_tour_dates_import'] ) ) {
 			delete_option( '_wolf_events_needs_tour_dates_update' );
 			update_option( '_wolf_events_tour_dates_updated', true );
+			update_option( '_wolf_events_update_skipped', true );
 			return;
 		}
 
 		// WTD already updated
-		if ( $is_tour_dates && get_option( '_wolf_events_tour_dates_updated' ) ) {
-			return;
-		} else {
-			// flag update needed
+		if ( $is_tour_dates && ! get_option( '_wolf_events_update_skipped' ) ) {
 			update_option( '_wolf_events_needs_tour_dates_update', true );
 		}
 
 		$message = wp_kses(
-			__( '<strong>Wolf Events</strong> is the newer version of <strong>Wolf Tour Dates</strong> plugin with more features and updates to come! Would you like to import your posts from Wolf Tour Dates plugin?', '%TEXTDOMAIN%' ),
+			__( '<strong>Wolf Events</strong> is the newer version of <strong>Wolf Tour Dates</strong> plugin with more features and updates to come! Would you like to import your posts from Wolf Tour Dates plugin? You can skip this message or disable Wolf Tour Dates if you already have imported your old data.', '%TEXTDOMAIN%' ),
 			array(
 				'a' => array(
 					'href' => array(),
@@ -147,7 +147,9 @@ class WE_Admin {
 
 		$output .= '</p></div>';
 
-		echo $output;
+		if ( get_option( '_wolf_events_needs_tour_dates_update' ) && 'index.php' === $pagenow && ! defined( 'DOING_AJAX' ) ) {
+			echo $output;
+		}
 
 		return false;
 	}
@@ -163,7 +165,7 @@ class WE_Admin {
 
 			if ( $this->import_posts_from_wtd() ) {
 
-				$message = esc_html__( 'Your posts have been successfully imported.', '%TEXTDOMAIN%' );
+				$message = esc_html__( 'Your posts have been successfully imported. You can deactivate Wolf Tour Dates plugin.', '%TEXTDOMAIN%' );
 
 				$output = '<div class="updated"><p>';
 
@@ -174,7 +176,7 @@ class WE_Admin {
 				echo $output;
 
 			} else {
-				$message = esc_html__( 'Importation failed :(.', '%TEXTDOMAIN%' );
+				$message = esc_html__( 'Importation failed. Please try again.', '%TEXTDOMAIN%' );
 
 				$output = '<div class="error"><p>';
 
@@ -211,26 +213,31 @@ class WE_Admin {
 			$args = array(
 				'post_title' => $post->post_title,
 				'post_content' => $post->post_content,
+				'post_name' => $post->post_name,
 				'post_status' => 'publish',
 				'post_type' => 'event',
 			);
 
 			// create new post
-			$new_post_id = wp_insert_post( $args );
+			if ( ! get_page_by_title( $post->post_title, OBJECT, 'event' ) ) {
+				$new_post_id = wp_insert_post( $args );
+			} else {
+				$new_post_id = null;
+			}
 
 			// get taxonomy from old post
 			$term_list = wp_get_post_terms( $post->ID, 'artist', array( 'fields' => 'all' ) );
 
 			foreach( $term_list as $term ) {
 
-				$new_term = term_exists( $term->name, 'artist' );
+				$new_term = term_exists( $term->name, 'we_artist' );
 
 				if ( ! $new_term ) {
 
 					// create term from old one if not already done
 					wp_insert_term(
 						$term->name,
-						'artist',
+						'we_artist',
 						array(
 							'description'=> $term->description,
 							'slug' => $term->slug,
@@ -238,7 +245,7 @@ class WE_Admin {
 					);
 				}
 
-				wp_set_post_terms( $new_post_id, $term->name, 'artist' );
+				wp_set_post_terms( $new_post_id, $term->name, 'we_artist' );
 			}
 
 			//continue;
@@ -248,11 +255,23 @@ class WE_Admin {
 				// old metas
 				foreach ( $metabox_slugs as $slug ) {
 
-					if ( 'date' == $slug ) {
-						$slug = 'start_date';
+					$old_slug = $slug;
+					$new_slug = $slug;
+
+					$old_meta = get_post_meta( $old_post_id, '_wolf_show_' . $old_slug, true );
+
+					if ( 'date' === $old_slug ) {
+						$new_slug = 'start_date'; // _wolf_event_start_date
+
+						/* Convert date to new forma */
+						$exploded_date = explode( '-', $old_meta);
+
+						if ( isset( $exploded_date[0] ) && isset( $exploded_date[1] ) && isset( $exploded_date[2] ) ) {
+							$old_meta = $exploded_date[1] . '-' . $exploded_date[0] . '-' . $exploded_date[2];
+						}
 					}
 
-					update_post_meta( $new_post_id, '_wolf_event_' . $slug, get_post_meta( $old_post_id, '_wolf_show_' . $slug, true ) );
+					update_post_meta( $new_post_id, '_wolf_event_' . $new_slug, $old_meta );
 				}
 
 				if ( get_post_thumbnail_id( $old_post_id ) ) {
@@ -263,7 +282,6 @@ class WE_Admin {
 		}
 
 		// update shortcode in posts
-
 		//delete_option( '_wolf_events_needs_tour_dates_update' );
 		//update_option( '_wolf_events_tour_dates_updated', true );
 
