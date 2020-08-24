@@ -4,7 +4,7 @@
  *
  * @author WolfThemes
  * @package WolfEvents/Templates
- * @version %VERISION%
+ * @version 1.0.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

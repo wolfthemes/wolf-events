@@ -5,7 +5,7 @@
  * @author WolfThemes
  * @category Core
  * @package WolfEvents/Admin
- * @version %VERSION%
+ * @version 1.0.8
  */
 ?>
 <div class="<?php echo esc_attr( $classes );  ?>" itemscope itemtype="http://schema.org/MusicEvent">

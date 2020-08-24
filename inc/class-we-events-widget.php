@@ -7,7 +7,7 @@
  * @author WolfThemes
  * @category Widgets
  * @package WolfEvents/Widgets
- * @version %VERSION%
+ * @version 1.0.8
  * @extends WP_Widget
  */
 

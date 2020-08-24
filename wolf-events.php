@@ -32,7 +32,7 @@ if ( ! class_exists( 'Wolf_Events' ) ) {
 	 * Contains the main functions for Wolf_Events
 	 *
 	 * @class Wolf_Events
-	 * @version %VERSION%
+	 * @version 1.0.8
 	 * @since 1.0.0
 	 */
 	class Wolf_Events {
@@ -45,7 +45,7 @@ if ( ! class_exists( 'Wolf_Events' ) ) {
 		/**
 		 * @var string
 		 */
-		public $version = '%VERSION%';
+		public $version = '1.0.8';
 
 		/**
 		 * @var Wolf Events The single instance of the class

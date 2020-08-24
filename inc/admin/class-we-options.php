@@ -6,7 +6,7 @@
  * @author WolfThemes
  * @category Admin
  * @package WolfEvents/Admin
- * @version %VERSION%
+ * @version 1.0.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
