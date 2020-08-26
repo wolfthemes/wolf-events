@@ -11,9 +11,7 @@
  * @extends WP_Widget
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
-}
+defined( 'ABSPATH' ) || exit;
 
 class WE_Event_List_Widget extends WP_Widget {
 
@@ -31,9 +29,9 @@ class WE_Event_List_Widget extends WP_Widget {
 	public function __construct() {
 		/* Widget variable settings. */
 		$this->we_widget_cssclass 	= 'we_event_list_widget';
-		$this->we_widget_description = esc_html__( 'Displays the upcoming events in a list.', '%TEXTDOMAIN%' );
+		$this->we_widget_description = esc_html__( 'Displays the upcoming events in a list.', 'wolf-events' );
 		$this->we_widget_idbase 	= 'we_event_list_widget';
-		$this->we_widget_name 	= esc_html__( 'Event list', '%TEXTDOMAIN%' );
+		$this->we_widget_name 	= esc_html__( 'Event list', 'wolf-events' );
 
 		/* Widget settings. */
 		$widget_ops = array( 'classname' => $this->we_widget_cssclass, 'description' => $this->we_widget_description );
@@ -96,11 +94,11 @@ class WE_Event_List_Widget extends WP_Widget {
 		$count = absint( $instance['count'] );
 		?>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', '%TEXTDOMAIN%' ); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'wolf-events' ); ?></label>
 			<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ) ; ?>" value="<?php echo esc_attr( $title ); ?>" class="widefat">
 		</p>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'count' ) ); ?>"><?php esc_html_e( 'Count:', '%TEXTDOMAIN%' ); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'count' ) ); ?>"><?php esc_html_e( 'Count:', 'wolf-events' ); ?></label>
 			<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'count' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'count' ) ) ; ?>" value="<?php echo esc_attr( $count ); ?>" class="widefat">
 		</p>
 		<?php

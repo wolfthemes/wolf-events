@@ -11,9 +11,7 @@
  * @extends WP_Widget
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
-}
+defined( 'ABSPATH' ) || exit;
 
 class WE_Events_Widget extends WP_Widget {
 
@@ -31,9 +29,9 @@ class WE_Events_Widget extends WP_Widget {
 	public function __construct() {
 		/* Widget variable settings. */
 		$this->we_widget_cssclass 	= 'we_events_widget';
-		$this->we_widget_description = esc_html__( 'Displays the upcoming events with thumbnail.', '%TEXTDOMAIN%' );
+		$this->we_widget_description = esc_html__( 'Displays the upcoming events with thumbnail.', 'wolf-events' );
 		$this->we_widget_idbase 	= 'we_events_widget';
-		$this->we_widget_name 	= esc_html__( 'Events', '%TEXTDOMAIN%' );
+		$this->we_widget_name 	= esc_html__( 'Events', 'wolf-events' );
 
 		/* Widget settings. */
 		$widget_ops = array( 'classname' => $this->we_widget_cssclass, 'description' => $this->we_widget_description );
@@ -85,7 +83,7 @@ class WE_Events_Widget extends WP_Widget {
 		$title = wp_strip_all_tags( $instance['title'] );
 		?>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', '%TEXTDOMAIN%' ); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'wolf-events' ); ?></label>
 			<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ) ; ?>" value="<?php echo esc_attr( $title ); ?>" class="widefat">
 		</p>
 		<?php

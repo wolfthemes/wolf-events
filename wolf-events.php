@@ -3,24 +3,22 @@
  * Plugin Name: Wolf Events
  * Plugin URI: https://wlfthm.es/wolf-events
  * Description: A Plugin to Manage your Events
- * Version: 1.2.1
+ * Version: 1.2.0
  * Author: WolfThemes
  * Author URI: https://wolfthemes.com
  * Requires at least: 5.0
  * Tested up to: 5.5
  *
- * Text Domain: %TEXTDOMAIN%
+ * Text Domain: wolf-events
  * Domain Path: /languages/
  *
  * @package WolfEvents
  * @category Core
  * @author WolfThemes
  *
- * Being a free product, this plugin is distributed as-is without official support.
- * Verified customers however, who have purchased a premium theme
- * at https://wlfthm.es/tf
+ * Verified customers who have purchased a premium theme at https://wlfthm.es/tf/
  * will have access to support for this plugin in the forums
- * https://wlfthm.es/help
+ * https://wlfthm.es/help/
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -100,11 +98,11 @@ if ( ! class_exists( 'Wolf_Events' ) ) {
 		 */
 		private function init_hooks() {
 
-			add_action( 'admin_init', array( $this, 'plugin_update' ) );
-
 			add_action( 'after_setup_theme', array( $this, 'include_template_functions' ), 11 );
 			add_action( 'init', array( $this, 'init' ), 0 );
 			register_activation_hook( __FILE__, array( $this, 'activate' ) );
+
+			add_action( 'admin_init', array( $this, 'plugin_update' ) );
 		}
 
 		/**
@@ -320,8 +318,8 @@ if ( ! class_exists( 'Wolf_Events' ) ) {
 		 */
 		public function load_plugin_textdomain() {
 
-			$domain = '%TEXTDOMAIN%';
-			$locale = apply_filters( '%TEXTDOMAIN%', get_locale(), $domain );
+			$domain = 'wolf-events';
+			$locale = apply_filters( 'wolf-events', get_locale(), $domain );
 			load_textdomain( $domain, WP_LANG_DIR . '/' . $domain . '/' . $domain . '-' . $locale . '.mo' );
 			load_plugin_textdomain( $domain, FALSE, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 		}
@@ -355,17 +353,9 @@ if ( ! class_exists( 'Wolf_Events' ) ) {
 		 */
 		public function plugin_update() {
 
-			// $plugin_slug = WE_SLUG;
-			// $plugin_path = WE_PATH;
-			// $remote_path = WE_UPDATE_URL . '/' . $plugin_slug;
-			// $plugin_data = get_plugin_data( WE_DIR . '/' . WE_SLUG . '.php' );
-			// $current_version = $plugin_data['Version'];
-			// include_once( 'class-we-update.php');
-			// new WE_Update( $current_version, $remote_path, $plugin_path );
-
-			include_once 'inc/admin/updater.php';
-
-			define( 'WP_GITHUB_FORCE_UPDATE', true );
+			if ( ! class_exists( 'WP_GitHub_Updater' ) ) {
+				include_once 'inc/admin/updater.php';
+			}
 
 			$repo = 'wolfthemes/wolf-events';
 

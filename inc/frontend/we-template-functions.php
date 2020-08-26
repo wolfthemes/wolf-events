@@ -10,9 +10,7 @@
  * @version %VERSION%
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
-}
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Output generator tag to aid debugging.

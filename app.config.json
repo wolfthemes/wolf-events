@@ -1,0 +1,14 @@
+{
+	"version": "1.2.0",
+	"updated": "2020-06-15",
+	"slug": "wolf-events",
+	"name": "Wolf Events",
+	"packagename": "WolfEvents",
+	"created": "2017-06-21",
+	"createdNice": "21th june 2017",
+	"description": "A plugin to manage your events.",
+	"link": "https://github.com/wolfthemes/wolf-events",
+	"shortlink": "http://wlfthm.es/wolf-events",
+	"author": "WolfThemes",
+	"authorURI": "http://wolfthemes.com"
+}

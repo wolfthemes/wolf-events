@@ -1,3 +1,4 @@
+# Changelog
 #### 15th June 2010 - Version 1.2.1
 
 * Tweak: Added custom date class filter

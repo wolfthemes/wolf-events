@@ -10,4 +10,4 @@
  * @version 1.0.0
  */
 
-defined( 'ABSPATH' ) || exit;
+defined( 'WP_UNINSTALL_PLUGIN' ) || exit;

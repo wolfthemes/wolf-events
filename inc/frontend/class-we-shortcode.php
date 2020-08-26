@@ -10,9 +10,7 @@
  * @since 1.2.6
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
-}
+defined( 'ABSPATH' ) || exit;
 
 /**
  * WE_Shortcode class.

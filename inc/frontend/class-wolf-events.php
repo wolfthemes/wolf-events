@@ -9,9 +9,7 @@
  * @version %VERSION%
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
-}
+defined( 'ABSPATH' ) || exit;
 
 /**
  * WE_Admin class.
@@ -92,7 +90,7 @@ class WE_Frontend {
 
 			// if ( $display_past_events ) {
 			// 	echo '<h2 class="we-list-title">';
-			// 	echo apply_filters( 'we_upcoming_events_text', we_get_option( 'upcoming_events_text', esc_html__( 'Upcoming events', '%TEXTDOMAIN%' ) ) );
+			// 	echo apply_filters( 'we_upcoming_events_text', we_get_option( 'upcoming_events_text', esc_html__( 'Upcoming events', 'wolf-events' ) ) );
 			// 	echo '</h2>';
 			// }
 
@@ -125,7 +123,7 @@ class WE_Frontend {
 			echo '</div><!-- .wolf-upcoming-events -->';
 
 		} else { // no events
-			?><p><?php echo we_get_option( 'no_shows_text', esc_html__( 'No upcoming shows scheduled', '%TEXTDOMAIN%' ) ); ?></p><?php
+			?><p><?php echo we_get_option( 'no_shows_text', esc_html__( 'No upcoming shows scheduled', 'wolf-events' ) ); ?></p><?php
 		}
 		wp_reset_postdata();
 
@@ -140,7 +138,7 @@ class WE_Frontend {
 		// 		$container_class = 'wolf-events-table wolf-past-events-table';
 
 		// 		echo '<h2 class="we-list-title">';
-		// 		echo apply_filters( 'we_past_events_text', we_get_option( 'past_events_text', esc_html__( 'Past events', '%TEXTDOMAIN%' ) ) );
+		// 		echo apply_filters( 'we_past_events_text', we_get_option( 'past_events_text', esc_html__( 'Past events', 'wolf-events' ) ) );
 		// 		echo '</h2>';
 
 		// 		echo '<div class="' . esc_attr( $container_class ) . '">';
@@ -233,27 +231,27 @@ class WE_Frontend {
 
 		// Buy ticket links
 		if ( ! $cancelled && ! $soldout && ! $free && $ticket_url ) {
-			$action_text = apply_filters( 'we_ticket_link_text', we_get_option( 'ticket_text', esc_html__( 'Tickets', '%TEXTDOMAIN%' ) ) );
+			$action_text = apply_filters( 'we_ticket_link_text', we_get_option( 'ticket_text', esc_html__( 'Tickets', 'wolf-events' ) ) );
 			$ticket_url_class = apply_filters( 'we_ticket_link_class', 'we-ticket-link' );
 			$target = apply_filters( 'we_ticket_link_target', '_self' );
 			$action = '<a target="' . esc_attr( $target ) . '" class="' . esc_attr( $ticket_url_class ) . '" href="' . esc_url( $ticket_url ) . '">' . sanitize_text_field( $action_text ) . '</a>';
 		}
 
 		if ( $free && ! $cancelled && ! $soldout ) {
-			$action_text = apply_filters( 'we_free_text', esc_html__( 'Free', '%TEXTDOMAIN%' ) );
+			$action_text = apply_filters( 'we_free_text', esc_html__( 'Free', 'wolf-events' ) );
 			$action  = '<span class="we-label we-label-free">' . sanitize_text_field( $action_text ) . '</span>';
 		}
 
 		if ( $cancelled ) {
 			$link = false;
 			$classes[] = 'we-cancelled';
-			$action_text = apply_filters( 'we_cancelled_text', esc_html__( 'Cancelled', '%TEXTDOMAIN%' ) );
+			$action_text = apply_filters( 'we_cancelled_text', esc_html__( 'Cancelled', 'wolf-events' ) );
 			$action  = '<span class="we-label we-label-cancelled">' . sanitize_text_field( $action_text ) . '</span>';
 		}
 
 		if ( $soldout ) {
 			$classes[] = 'we-soldout';
-			$action_text = apply_filters( 'we_soldout_text', esc_html__( 'Sold out!', '%TEXTDOMAIN%' ) );
+			$action_text = apply_filters( 'we_soldout_text', esc_html__( 'Sold out!', 'wolf-events' ) );
 			$action  = '<span class="we-label we-label-soldout">' . sanitize_text_field( $action_text ) . '</span>';
 		}
 
@@ -400,7 +398,7 @@ class WE_Frontend {
 
 			list( $day, $monthnbr, $year ) = explode( '-', $date );
 			$search = array( '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12' );
-			$replace = array( esc_html__( 'Jan', '%TEXTDOMAIN%' ), esc_html__( 'Feb', '%TEXTDOMAIN%' ), esc_html__( 'Mar', '%TEXTDOMAIN%' ), esc_html__( 'Apr', '%TEXTDOMAIN%' ), esc_html__( 'May', '%TEXTDOMAIN%' ), esc_html__( 'Jun', '%TEXTDOMAIN%' ), esc_html__( 'Jul', '%TEXTDOMAIN%' ), esc_html__( 'Aug', '%TEXTDOMAIN%' ), esc_html__( 'Sep', '%TEXTDOMAIN%' ), esc_html__( 'Oct', '%TEXTDOMAIN%' ), esc_html__( 'Nov', '%TEXTDOMAIN%' ), esc_html__( 'Dec', '%TEXTDOMAIN%' ) );
+			$replace = array( esc_html__( 'Jan', 'wolf-events' ), esc_html__( 'Feb', 'wolf-events' ), esc_html__( 'Mar', 'wolf-events' ), esc_html__( 'Apr', 'wolf-events' ), esc_html__( 'May', 'wolf-events' ), esc_html__( 'Jun', 'wolf-events' ), esc_html__( 'Jul', 'wolf-events' ), esc_html__( 'Aug', 'wolf-events' ), esc_html__( 'Sep', 'wolf-events' ), esc_html__( 'Oct', 'wolf-events' ), esc_html__( 'Nov', 'wolf-events' ), esc_html__( 'Dec', 'wolf-events' ) );
 			$month = str_replace( $search, $replace, $monthnbr );
 
 			$custom_date_class = apply_filters( 'we_custom_date_class', 'wvc-bigtext' );

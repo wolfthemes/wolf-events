@@ -9,9 +9,7 @@
  * @version %VERSION%
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
-}
+defined( 'ABSPATH' ) || exit;
 
 /**
  * WE_Admin class.
@@ -106,7 +104,7 @@ class WE_Admin {
 		}
 
 		$message = wp_kses(
-			__( '<strong>Wolf Events</strong> is the newer version of <strong>Wolf Tour Dates</strong> plugin with more features and updates to come! Would you like to import your posts from Wolf Tour Dates plugin? You can skip this message or disable Wolf Tour Dates if you already have imported your old data.', '%TEXTDOMAIN%' ),
+			__( '<strong>Wolf Events</strong> is the newer version of <strong>Wolf Tour Dates</strong> plugin with more features and updates to come! Would you like to import your posts from Wolf Tour Dates plugin? You can skip this message or disable Wolf Tour Dates if you already have imported your old data.', 'wolf-events' ),
 			array(
 				'a' => array(
 					'href' => array(),
@@ -124,7 +122,7 @@ class WE_Admin {
 				__( '<br><br>
 				<a href="%1$s" class="button button-primary">Import tour dates</a>
 				&nbsp;
-				<a href="%2$s" class="button">Skip</a>', '%TEXTDOMAIN%' ),
+				<a href="%2$s" class="button">Skip</a>', 'wolf-events' ),
 
 				array(
 						'a' => array(
@@ -165,7 +163,7 @@ class WE_Admin {
 
 			if ( $this->import_posts_from_wtd() ) {
 
-				$message = esc_html__( 'Your posts have been successfully imported. You can deactivate Wolf Tour Dates plugin.', '%TEXTDOMAIN%' );
+				$message = esc_html__( 'Your posts have been successfully imported. You can deactivate Wolf Tour Dates plugin.', 'wolf-events' );
 
 				$output = '<div class="updated"><p>';
 
@@ -176,7 +174,7 @@ class WE_Admin {
 				echo $output;
 
 			} else {
-				$message = esc_html__( 'Importation failed. Please try again.', '%TEXTDOMAIN%' );
+				$message = esc_html__( 'Importation failed. Please try again.', 'wolf-events' );
 
 				$output = '<div class="error"><p>';
 
@@ -322,7 +320,7 @@ class WE_Admin {
 
 			$message = '<strong>Wolf Events</strong> ' . sprintf(
 					wp_kses(
-						__( 'says : <em>Almost done! you need to <a href="%1$s">create a page</a> for your galleries or <a href="%2$s">select an existing page</a> in the plugin settings</em>.', '%TEXTDOMAIN%' ),
+						__( 'says : <em>Almost done! you need to <a href="%1$s">create a page</a> for your galleries or <a href="%2$s">select an existing page</a> in the plugin settings</em>.', 'wolf-events' ),
 						array(
 							'a' => array(
 								'href' => array(),
@@ -345,7 +343,7 @@ class WE_Admin {
 					&nbsp;
 					<a href="%2$s" class="button button-primary">Select an existing page</a>
 					&nbsp;
-					<a href="%3$s" class="button">Skip setup</a>', '%TEXTDOMAIN%' ),
+					<a href="%3$s" class="button">Skip setup</a>', 'wolf-events' ),
 
 					array(
 							'a' => array(
@@ -389,7 +387,7 @@ class WE_Admin {
 
 			// Create post object
 			$post = array(
-				'post_title'  => esc_html__( 'Events', '%TEXTDOMAIN%' ),
+				'post_title'  => esc_html__( 'Events', 'wolf-events' ),
 				'post_type'   => 'page',
 				'post_status' => 'publish',
 			);
@@ -402,7 +400,7 @@ class WE_Admin {
 				update_option( '_wolf_events_page_id', $post_id );
 				update_post_meta( $post_id, '_wpb_status', 'off' ); // disable page builder mode for this page
 
-				$message = esc_html__( 'Your events page has been created succesfully', '%TEXTDOMAIN%' );
+				$message = esc_html__( 'Your events page has been created succesfully', 'wolf-events' );
 
 				$output = '<div class="updated"><p>';
 
@@ -423,7 +421,7 @@ class WE_Admin {
 	public function is_events_index_page() {
 
 		if ( isset( $_GET['post'] ) && absint( $_GET['post'] ) == wolf_events_get_page_id() ) {
-			$message = esc_html__( 'You are currently editing the page that shows the events.', '%TEXTDOMAIN%' );
+			$message = esc_html__( 'You are currently editing the page that shows the events.', 'wolf-events' );
 
 			$output = '<div class="notice notice-warning inline"><p>';
 
@@ -470,10 +468,10 @@ class WE_Admin {
 	public function admin_columns_head_events( $columns ) {
 
 		unset( $columns['date'] );
-		$columns['event_date']   = esc_html__( 'Event Date', '%TEXTDOMAIN%' );
-		$columns['event_place']  = esc_html__( 'Place', '%TEXTDOMAIN%' );
-		$columns['event_venue']  = esc_html__( 'Venue', '%TEXTDOMAIN%' );
-		$columns['event_status'] = esc_html__( 'Status', '%TEXTDOMAIN%' );
+		$columns['event_date']   = esc_html__( 'Event Date', 'wolf-events' );
+		$columns['event_place']  = esc_html__( 'Place', 'wolf-events' );
+		$columns['event_venue']  = esc_html__( 'Venue', 'wolf-events' );
+		$columns['event_status'] = esc_html__( 'Status', 'wolf-events' );
 		return $columns;
 	}
 
@@ -490,21 +488,21 @@ class WE_Admin {
 		$date_format = get_option( 'date_format' );
 		$cancelled = get_post_meta( $post_id, '_wolf_event_cancel', true );
 		$soldout = get_post_meta( $post_id, '_wolf_event_soldout', true );
-		$status = esc_html__( 'upcoming', '%TEXTDOMAIN%' );
+		$status = esc_html__( 'upcoming', 'wolf-events' );
 
 		$date = ( $end_date ) ? $end_date : $start_date;
 
 		if ( we_is_past_show( $date ) ) {
 
-			$status = esc_html__( 'past', '%TEXTDOMAIN%' );
+			$status = esc_html__( 'past', 'wolf-events' );
 
 		} elseif ( $cancelled ) {
 
-			$status = esc_html__( 'cancelled', '%TEXTDOMAIN%' );
+			$status = esc_html__( 'cancelled', 'wolf-events' );
 
 		} elseif ( $soldout ) {
 
-			$status = esc_html__( 'sold out', '%TEXTDOMAIN%' );
+			$status = esc_html__( 'sold out', 'wolf-events' );
 		}
 
 		$city = get_post_meta( $post_id, '_wolf_event_city', true );
@@ -560,7 +558,7 @@ class WE_Admin {
 	 */
 	public function settings_action_links( $links ) {
 		$setting_link = array(
-			'<a href="' . admin_url( 'edit.php?post_type=event&page=wolf-events-settings' ) . '">' . esc_html__( 'Settings', '%TEXTDOMAIN%' ) . '</a>',
+			'<a href="' . admin_url( 'edit.php?post_type=event&page=wolf-events-settings' ) . '">' . esc_html__( 'Settings', 'wolf-events' ) . '</a>',
 		);
 		return array_merge( $links, $setting_link );
 	}

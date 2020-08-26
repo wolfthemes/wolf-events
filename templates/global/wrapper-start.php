@@ -7,9 +7,7 @@
  * @version %VERISION%
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
-}
+defined( 'ABSPATH' ) || exit;
 
 $template = get_option( 'template' );
 
