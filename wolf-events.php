@@ -1,9 +1,9 @@
 <?php
 /**
- * Plugin Name: Wolf Events
+ * Plugin Name: Events
  * Plugin URI: https://wlfthm.es/wolf-events
- * Description: A Plugin to Manage your Events
- * Version: 1.2.0
+ * Description: A plugin to manage your events.
+ * Version: 1.2.2
  * Author: WolfThemes
  * Author URI: https://wolfthemes.com
  * Requires at least: 5.0
@@ -30,7 +30,7 @@ if ( ! class_exists( 'Wolf_Events' ) ) {
 	 * Contains the main functions for Wolf_Events
 	 *
 	 * @class Wolf_Events
-	 * @version %VERSION%
+	 * @version 1.2.2
 	 * @since 1.0.0
 	 */
 	class Wolf_Events {
@@ -43,7 +43,7 @@ if ( ! class_exists( 'Wolf_Events' ) ) {
 		/**
 		 * @var string
 		 */
-		public $version = '%VERSION%';
+		public $version = '1.2.2';
 
 		/**
 		 * @var Wolf Events The single instance of the class
@@ -141,7 +141,6 @@ if ( ! class_exists( 'Wolf_Events' ) ) {
 				'WE_SLUG' => plugin_basename( dirname( __FILE__ ) ),
 				'WE_PATH' => plugin_basename( __FILE__ ),
 				'WE_VERSION' => $this->version,
-				'WE_UPDATE_URL' => $this->update_url,
 				'WE_SUPPORT_URL' => $this->support_url,
 				'WE_DOC_URI' => 'http://docs.wolfthemes.com/documentation/plugins/' . plugin_basename( dirname( __FILE__ ) ),
 				'WE_WOLF_DOMAIN' => 'wolfthemes.com',

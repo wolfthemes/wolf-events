@@ -1,14 +1,12 @@
-Thanks for downloading Wolf Events!
+# Thanks for downloading Events!
 
-A plugin to manage your events
+A plugin to manage your events.
 
-Plugin page:
+## Plugin page
 https://github.com/wolfthemes/wolf-events
 
-Being a free product, this plugin is distributed as-is without official support.
-Verified customers however, who have purchased a premium theme
-at https://wlfthm.es/tf
-will have access to support for this plugin in the forums
-https://wlfthm.es/help
+## Support
+Verified customers who have purchased a premium theme on [ThemeForest](http://wlfthm.es/tf)
+will have access to support for this plugin in the [forums](http://wlfthm.es/help).
 
 Have fun!

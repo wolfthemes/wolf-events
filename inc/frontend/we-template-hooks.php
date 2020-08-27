@@ -7,7 +7,7 @@
  * @author WolfThemes
  * @category Core
  * @package WolfEvents/Templates
- * @version %VERSION%
+ * @version 1.2.2
  */
 
 defined( 'ABSPATH' ) || exit;
