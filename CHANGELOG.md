@@ -1,5 +1,9 @@
 # Changelog
 
+#### 31th August 2020 - Version 1.2.3
+
+-   Fix: PHP 7.4 error from we_set_custom_post_types_admin_order admin function 
+
 #### 26th August 2020 - Version 1.2.2
 
 -   Tweak: Unbrand plugin name

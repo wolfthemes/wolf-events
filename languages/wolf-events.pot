@@ -2,9 +2,9 @@
 # This file is distributed under the same license as the Events package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Events 1.2.2\n"
+"Project-Id-Version: Events 1.2.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wolf-events\n"
-"POT-Creation-Date: 2020-08-27 12:57:25+00:00\n"
+"POT-Creation-Date: 2020-08-31 21:35:50+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -349,7 +349,7 @@ msgstr ""
 msgid "Video Image Fallback"
 msgstr ""
 
-#: inc/admin/class-we-options.php:57 inc/admin/we-admin-functions.php:50
+#: inc/admin/class-we-options.php:57 inc/admin/we-admin-functions.php:52
 #: pack/wolf-events/inc/admin/class-we-options.php:57
 #: pack/wolf-events/inc/admin/we-admin-functions.php:50
 msgid "Events Page"
