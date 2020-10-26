@@ -16,7 +16,7 @@ defined( 'ABSPATH' ) || exit;
  * Events
  */
 function wolf_events( $args = array() ) {
-	include_once( 'class-wolf-events.php' );
+	include_once 'class-wolf-events.php';
 	$events = new WE_Frontend();
 	return $events->events( $args );
 }
@@ -26,7 +26,7 @@ function wolf_events( $args = array() ) {
  * Event list
  */
 function wolf_event_list( $args = array() ) {
-	include_once( 'class-wolf-events.php' );
+	include_once 'class-wolf-events.php';
 	$events = new WE_Frontend();
 	return $events->event_list( $args );
 }
@@ -36,7 +36,7 @@ function wolf_event_list( $args = array() ) {
  */
 function we_get_event_meta( $post_id = '' ) {
 	$post_id = ( $post_id ) ? $post_id : get_the_ID();
-	include_once( 'class-wolf-events.php' );
+	include_once 'class-wolf-events.php';
 	$events = new WE_Frontend();
 	return $events->get_event_meta( $post_id );
 }
@@ -49,11 +49,14 @@ function we_get_event_meta( $post_id = '' ) {
  */
 function we_sanitize_iframe( $iframe ) {
 
-	return wp_kses( $iframe, array(
-		'iframe' => array(
-			'src' => array(),
-		),
-	) );
+	return wp_kses(
+		$iframe,
+		array(
+			'iframe' => array(
+				'src' => array(),
+			),
+		)
+	);
 }
 
 /**
@@ -62,7 +65,7 @@ function we_sanitize_iframe( $iframe ) {
  * @param string $iframe
  * @return string
  */
-function we_get_iframe(  $iframe ) {
+function we_get_iframe( $iframe ) {
 
 	if ( preg_match( '/src=("|\')?([a-zA-Z0-9:\/\'?!=.+%-_]+)("|\')?"/', $iframe, $match ) ) {
 
@@ -81,30 +84,33 @@ function we_get_iframe(  $iframe ) {
  * @return string $date
  */
 function we_sanitize_date( $date ) {
-	$date = wp_kses( $date, array(
-		'span' => array(
-			'href' => array(),
-			'class' => array(),
-			'id' => array(),
-			'rel' => array(),
-			'itemprop' => array(),
-		),
-		'strong' => array(
-			'class' => array(),
-			'id' => array(),
-			'itemprop' => array(),
-		),
-		'em' => array(
-			'class' => array(),
-			'id' => array(),
-			'itemprop' => array(),
-		),
-		'div' => array(
-			'class' => array(),
-			'id' => array(),
-			'itemprop' => array(),
-		),
-	) );
+	$date = wp_kses(
+		$date,
+		array(
+			'span'   => array(
+				'href'     => array(),
+				'class'    => array(),
+				'id'       => array(),
+				'rel'      => array(),
+				'itemprop' => array(),
+			),
+			'strong' => array(
+				'class'    => array(),
+				'id'       => array(),
+				'itemprop' => array(),
+			),
+			'em'     => array(
+				'class'    => array(),
+				'id'       => array(),
+				'itemprop' => array(),
+			),
+			'div'    => array(
+				'class'    => array(),
+				'id'       => array(),
+				'itemprop' => array(),
+			),
+		)
+	);
 
 	return $date;
 }
@@ -116,22 +122,25 @@ function we_sanitize_date( $date ) {
  * @return string $date
  */
 function we_sanitize_action( $action ) {
-	$action = wp_kses( $action, array(
-		'a' => array(
-			'href' => array(),
-			'class' => array(),
-			'id' => array(),
-			'rel' => array(),
-			'target' => array(),
-			'itemprop' => array(),
-		),
-		'span' => array(
-			'class' => array(),
-			'id' => array(),
-			'rel' => array(),
-			'itemprop' => array(),
-		),
-	) );
+	$action = wp_kses(
+		$action,
+		array(
+			'a'    => array(
+				'href'     => array(),
+				'class'    => array(),
+				'id'       => array(),
+				'rel'      => array(),
+				'target'   => array(),
+				'itemprop' => array(),
+			),
+			'span' => array(
+				'class'    => array(),
+				'id'       => array(),
+				'rel'      => array(),
+				'itemprop' => array(),
+			),
+		)
+	);
 	return $action;
 }
 
@@ -144,13 +153,13 @@ function we_enqueue_scripts() {
 
 	wp_enqueue_style( 'wolf-events', WE_URI . '/assets/css/events.min.css', array(), WE_VERSION, 'all' );
 }
-add_action( 'wp_enqueue_scripts',  'we_enqueue_scripts' );
+add_action( 'wp_enqueue_scripts', 'we_enqueue_scripts' );
 
 /**
  * Returns post thumbnail URL
  *
  * @param string $format
- * @param int $post_id
+ * @param int    $post_id
  * @return string
  */
 function we_get_post_thumbnail_url( $format, $post_id = null ) {
@@ -165,10 +174,10 @@ function we_get_post_thumbnail_url( $format, $post_id = null ) {
 	if ( $ID && has_post_thumbnail( $ID ) ) {
 
 		$attachment_id = get_post_thumbnail_id( $ID );
-		if ( $attachment_id ){
+		if ( $attachment_id ) {
 			$img_src = wp_get_attachment_image_src( $attachment_id, $format );
 
-			if ( $img_src && isset( $img_src[0] ) ){
+			if ( $img_src && isset( $img_src[0] ) ) {
 				return $img_src[0];
 			}
 		}
@@ -199,7 +208,7 @@ function we_post_classes( $classes ) {
 
 	if ( 'event' === get_post_type() ) {
 		$cancelled = get_post_meta( get_the_ID(), '_wolf_event_cancel', true );
-		$soldout = get_post_meta( get_the_ID(), '_wolf_event_soldout', true );
+		$soldout   = get_post_meta( get_the_ID(), '_wolf_event_soldout', true );
 
 		if ( $cancelled ) {
 
