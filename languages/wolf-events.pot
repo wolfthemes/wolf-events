@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Events 1.2.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wolf-events\n"
-"POT-Creation-Date: 2020-08-31 21:35:50+00:00\n"
+"POT-Creation-Date: 2020-09-02 13:14:29+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -351,7 +351,7 @@ msgstr ""
 
 #: inc/admin/class-we-options.php:57 inc/admin/we-admin-functions.php:52
 #: pack/wolf-events/inc/admin/class-we-options.php:57
-#: pack/wolf-events/inc/admin/we-admin-functions.php:50
+#: pack/wolf-events/inc/admin/we-admin-functions.php:52
 msgid "Events Page"
 msgstr ""
 
@@ -463,13 +463,13 @@ msgstr ""
 msgid "Save Changes"
 msgstr ""
 
-#: inc/admin/updater.php:434
+#: inc/admin/updater.php:434 pack/wolf-events/inc/admin/updater.php:434
 msgid ""
 "The plugin has been updated, but could not be reactivated. Please "
 "reactivate it manually."
 msgstr ""
 
-#: inc/admin/updater.php:435
+#: inc/admin/updater.php:435 pack/wolf-events/inc/admin/updater.php:435
 msgid "Plugin reactivated successfully."
 msgstr ""
 
