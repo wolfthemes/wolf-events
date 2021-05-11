@@ -1,14 +1,14 @@
-# Copyright (C) 2020 WolfThemes
+# Copyright (C) 2021 WolfThemes
 # This file is distributed under the same license as the Events package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Events 1.2.3\n"
+"Project-Id-Version: Events 1.2.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wolf-events\n"
-"POT-Creation-Date: 2020-09-02 13:14:29+00:00\n"
+"POT-Creation-Date: 2021-05-11 15:46:47+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2020-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2021-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "X-Generator: grunt-wp-i18n 0.5.4\n"
@@ -401,7 +401,7 @@ msgid "Select a page..."
 msgstr ""
 
 #: inc/admin/class-we-options.php:148 inc/admin/class-we-options.php:224
-#: inc/frontend/class-wolf-events.php:234
+#: inc/frontend/class-wolf-events.php:239
 #: pack/wolf-events/inc/admin/class-we-options.php:148
 #: pack/wolf-events/inc/admin/class-we-options.php:224
 #: pack/wolf-events/inc/frontend/class-wolf-events.php:234
@@ -563,8 +563,7 @@ msgid "Facebook event page"
 msgstr ""
 
 #: inc/admin/we-metaboxes.php:126
-#: pack/wolf-events/inc/admin/we-metaboxes.php:126
-msgid "Bandsinwown event page"
+msgid "Bandsintown event page"
 msgstr ""
 
 #: inc/admin/we-metaboxes.php:132
@@ -582,7 +581,7 @@ msgstr ""
 msgid "Currency (e.g : USD)"
 msgstr ""
 
-#: inc/admin/we-metaboxes.php:151 inc/frontend/class-wolf-events.php:241
+#: inc/admin/we-metaboxes.php:151 inc/frontend/class-wolf-events.php:246
 #: pack/wolf-events/inc/admin/we-metaboxes.php:151
 #: pack/wolf-events/inc/frontend/class-wolf-events.php:241
 msgid "Free"
@@ -593,7 +592,7 @@ msgstr ""
 msgid "Sold Out"
 msgstr ""
 
-#: inc/admin/we-metaboxes.php:163 inc/frontend/class-wolf-events.php:248
+#: inc/admin/we-metaboxes.php:163 inc/frontend/class-wolf-events.php:253
 #: pack/wolf-events/inc/admin/we-metaboxes.php:163
 #: pack/wolf-events/inc/frontend/class-wolf-events.php:248
 msgid "Cancelled"
@@ -625,72 +624,72 @@ msgstr ""
 msgid "Displays the upcoming events with thumbnail."
 msgstr ""
 
-#: inc/frontend/class-wolf-events.php:126
+#: inc/frontend/class-wolf-events.php:130
 #: pack/wolf-events/inc/frontend/class-wolf-events.php:126
 msgid "No upcoming shows scheduled"
 msgstr ""
 
-#: inc/frontend/class-wolf-events.php:254
+#: inc/frontend/class-wolf-events.php:259
 #: pack/wolf-events/inc/frontend/class-wolf-events.php:254
 msgid "Sold out!"
 msgstr ""
 
-#: inc/frontend/class-wolf-events.php:401
+#: inc/frontend/class-wolf-events.php:406
 #: pack/wolf-events/inc/frontend/class-wolf-events.php:401
 msgid "Jan"
 msgstr ""
 
-#: inc/frontend/class-wolf-events.php:401
+#: inc/frontend/class-wolf-events.php:406
 #: pack/wolf-events/inc/frontend/class-wolf-events.php:401
 msgid "Feb"
 msgstr ""
 
-#: inc/frontend/class-wolf-events.php:401
+#: inc/frontend/class-wolf-events.php:406
 #: pack/wolf-events/inc/frontend/class-wolf-events.php:401
 msgid "Mar"
 msgstr ""
 
-#: inc/frontend/class-wolf-events.php:401
+#: inc/frontend/class-wolf-events.php:406
 #: pack/wolf-events/inc/frontend/class-wolf-events.php:401
 msgid "Apr"
 msgstr ""
 
-#: inc/frontend/class-wolf-events.php:401
+#: inc/frontend/class-wolf-events.php:406
 #: pack/wolf-events/inc/frontend/class-wolf-events.php:401
 msgid "May"
 msgstr ""
 
-#: inc/frontend/class-wolf-events.php:401
+#: inc/frontend/class-wolf-events.php:406
 #: pack/wolf-events/inc/frontend/class-wolf-events.php:401
 msgid "Jun"
 msgstr ""
 
-#: inc/frontend/class-wolf-events.php:401
+#: inc/frontend/class-wolf-events.php:406
 #: pack/wolf-events/inc/frontend/class-wolf-events.php:401
 msgid "Jul"
 msgstr ""
 
-#: inc/frontend/class-wolf-events.php:401
+#: inc/frontend/class-wolf-events.php:406
 #: pack/wolf-events/inc/frontend/class-wolf-events.php:401
 msgid "Aug"
 msgstr ""
 
-#: inc/frontend/class-wolf-events.php:401
+#: inc/frontend/class-wolf-events.php:406
 #: pack/wolf-events/inc/frontend/class-wolf-events.php:401
 msgid "Sep"
 msgstr ""
 
-#: inc/frontend/class-wolf-events.php:401
+#: inc/frontend/class-wolf-events.php:406
 #: pack/wolf-events/inc/frontend/class-wolf-events.php:401
 msgid "Oct"
 msgstr ""
 
-#: inc/frontend/class-wolf-events.php:401
+#: inc/frontend/class-wolf-events.php:406
 #: pack/wolf-events/inc/frontend/class-wolf-events.php:401
 msgid "Nov"
 msgstr ""
 
-#: inc/frontend/class-wolf-events.php:401
+#: inc/frontend/class-wolf-events.php:406
 #: pack/wolf-events/inc/frontend/class-wolf-events.php:401
 msgid "Dec"
 msgstr ""
@@ -819,6 +818,10 @@ msgstr ""
 #: inc/we-register-taxonomy.php:32
 #: pack/wolf-events/inc/we-register-taxonomy.php:32
 msgid "No artists found"
+msgstr ""
+
+#: pack/wolf-events/inc/admin/we-metaboxes.php:126
+msgid "Bandsinwown event page"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
