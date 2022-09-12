@@ -65,14 +65,15 @@ function we_sanitize_iframe( $iframe ) {
  * @param string $iframe
  * @return string
  */
-function we_get_iframe( $iframe ) {
+function we_get_iframe( $iframe, $h = null ) {
 
 	if ( preg_match( '/src=("|\')?([a-zA-Z0-9:\/\'?!=.+%-_]+)("|\')?"/', $iframe, $match ) ) {
 
 		if ( isset( $match[2] ) ) {
-			$src = $match[2];
+			$src                = $match[2];
+			$h                  = ( $h ) ? $h : 250;
 
-			return '<iframe width="100%" height="250" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="' . esc_url( $src ) . '&amp;output=embed"></iframe>';
+			return '<iframe width="100%" height="' . $h . '" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="' . esc_url( $src ) . '&amp;output=embed"></iframe>';
 		}
 	}
 }

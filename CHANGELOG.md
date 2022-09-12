@@ -1,5 +1,9 @@
 # Changelog
 
+#### 12th September 2022 - Version 1.2.5
+
+-   Tweak: Added height argument to we_get_iframe function
+
 #### 11th May 2021 - Version 1.2.4
 
 -   Fix: Typo
