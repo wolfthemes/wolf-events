@@ -1,14 +1,14 @@
-# Copyright (C) 2021 WolfThemes
+# Copyright (C) 2022 WolfThemes
 # This file is distributed under the same license as the Events package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Events 1.2.4\n"
+"Project-Id-Version: Events 1.2.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wolf-events\n"
-"POT-Creation-Date: 2021-05-11 15:46:47+00:00\n"
+"POT-Creation-Date: 2022-09-12 13:50:59+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2021-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2022-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "X-Generator: grunt-wp-i18n 0.5.4\n"
@@ -60,7 +60,7 @@ msgstr ""
 msgid "B"
 msgstr ""
 
-#: inc/admin/class-we-admin.php:107
+#: inc/admin/class-we-admin.php:109
 #: pack/wolf-events/inc/admin/class-we-admin.php:107
 msgid ""
 "<strong>Wolf Events</strong> is the newer version of <strong>Wolf Tour "
@@ -70,29 +70,28 @@ msgid ""
 "data."
 msgstr ""
 
-#: inc/admin/class-we-admin.php:122
-#: pack/wolf-events/inc/admin/class-we-admin.php:122
+#: inc/admin/class-we-admin.php:124
 msgid ""
-"<br><br>\r\n"
+"<br><br>\n"
 "\t\t\t\t<a href=\"%1$s\" class=\"button button-primary\">Import tour "
-"dates</a>\r\n"
-"\t\t\t\t&nbsp;\r\n"
+"dates</a>\n"
+"\t\t\t\t&nbsp;\n"
 "\t\t\t\t<a href=\"%2$s\" class=\"button\">Skip</a>"
 msgstr ""
 
-#: inc/admin/class-we-admin.php:166
+#: inc/admin/class-we-admin.php:168
 #: pack/wolf-events/inc/admin/class-we-admin.php:166
 msgid ""
 "Your posts have been successfully imported. You can deactivate Wolf Tour "
 "Dates plugin."
 msgstr ""
 
-#: inc/admin/class-we-admin.php:177
+#: inc/admin/class-we-admin.php:179
 #: pack/wolf-events/inc/admin/class-we-admin.php:177
 msgid "Importation failed. Please try again."
 msgstr ""
 
-#: inc/admin/class-we-admin.php:323
+#: inc/admin/class-we-admin.php:325
 #: pack/wolf-events/inc/admin/class-we-admin.php:323
 msgid ""
 "says : <em>Almost done! you need to <a href=\"%1$s\">create a page</a> for "
@@ -100,16 +99,15 @@ msgid ""
 "plugin settings</em>."
 msgstr ""
 
-#: inc/admin/class-we-admin.php:341
-#: pack/wolf-events/inc/admin/class-we-admin.php:341
+#: inc/admin/class-we-admin.php:343
 msgid ""
-"<br><br>\r\n"
+"<br><br>\n"
 "\t\t\t\t\t<a href=\"%1$s\" class=\"button button-primary\">Create a "
-"page</a>\r\n"
-"\t\t\t\t\t&nbsp;\r\n"
+"page</a>\n"
+"\t\t\t\t\t&nbsp;\n"
 "\t\t\t\t\t<a href=\"%2$s\" class=\"button button-primary\">Select an "
-"existing page</a>\r\n"
-"\t\t\t\t\t&nbsp;\r\n"
+"existing page</a>\n"
+"\t\t\t\t\t&nbsp;\n"
 "\t\t\t\t\t<a href=\"%3$s\" class=\"button\">Skip setup</a>"
 msgstr ""
 
@@ -117,58 +115,58 @@ msgstr ""
 msgid "Events"
 msgstr ""
 
-#: inc/admin/class-we-admin.php:403
+#: inc/admin/class-we-admin.php:405
 #: pack/wolf-events/inc/admin/class-we-admin.php:403
 msgid "Your events page has been created succesfully"
 msgstr ""
 
-#: inc/admin/class-we-admin.php:424
+#: inc/admin/class-we-admin.php:426
 #: pack/wolf-events/inc/admin/class-we-admin.php:424
 msgid "You are currently editing the page that shows the events."
 msgstr ""
 
-#: inc/admin/class-we-admin.php:471
+#: inc/admin/class-we-admin.php:473
 #: pack/wolf-events/inc/admin/class-we-admin.php:471
 msgid "Event Date"
 msgstr ""
 
-#: inc/admin/class-we-admin.php:472
+#: inc/admin/class-we-admin.php:474
 #: pack/wolf-events/inc/admin/class-we-admin.php:472
 msgid "Place"
 msgstr ""
 
-#: inc/admin/class-we-admin.php:473 inc/admin/we-metaboxes.php:39
+#: inc/admin/class-we-admin.php:475 inc/admin/we-metaboxes.php:39
 #: pack/wolf-events/inc/admin/class-we-admin.php:473
 #: pack/wolf-events/inc/admin/we-metaboxes.php:39
 msgid "Venue"
 msgstr ""
 
-#: inc/admin/class-we-admin.php:474
+#: inc/admin/class-we-admin.php:476
 #: pack/wolf-events/inc/admin/class-we-admin.php:474
 msgid "Status"
 msgstr ""
 
-#: inc/admin/class-we-admin.php:491
+#: inc/admin/class-we-admin.php:493
 #: pack/wolf-events/inc/admin/class-we-admin.php:491
 msgid "upcoming"
 msgstr ""
 
-#: inc/admin/class-we-admin.php:497
+#: inc/admin/class-we-admin.php:499
 #: pack/wolf-events/inc/admin/class-we-admin.php:497
 msgid "past"
 msgstr ""
 
-#: inc/admin/class-we-admin.php:501
+#: inc/admin/class-we-admin.php:503
 #: pack/wolf-events/inc/admin/class-we-admin.php:501
 msgid "cancelled"
 msgstr ""
 
-#: inc/admin/class-we-admin.php:505
+#: inc/admin/class-we-admin.php:507
 #: pack/wolf-events/inc/admin/class-we-admin.php:505
 msgid "sold out"
 msgstr ""
 
-#: inc/admin/class-we-admin.php:561 inc/admin/class-we-options.php:48
+#: inc/admin/class-we-admin.php:563 inc/admin/class-we-options.php:48
 #: pack/wolf-events/inc/admin/class-we-admin.php:561
 #: pack/wolf-events/inc/admin/class-we-options.php:48
 msgid "Settings"
@@ -818,6 +816,27 @@ msgstr ""
 #: inc/we-register-taxonomy.php:32
 #: pack/wolf-events/inc/we-register-taxonomy.php:32
 msgid "No artists found"
+msgstr ""
+
+#: pack/wolf-events/inc/admin/class-we-admin.php:122
+msgid ""
+"<br><br>\r\n"
+"\t\t\t\t<a href=\"%1$s\" class=\"button button-primary\">Import tour "
+"dates</a>\r\n"
+"\t\t\t\t&nbsp;\r\n"
+"\t\t\t\t<a href=\"%2$s\" class=\"button\">Skip</a>"
+msgstr ""
+
+#: pack/wolf-events/inc/admin/class-we-admin.php:341
+msgid ""
+"<br><br>\r\n"
+"\t\t\t\t\t<a href=\"%1$s\" class=\"button button-primary\">Create a "
+"page</a>\r\n"
+"\t\t\t\t\t&nbsp;\r\n"
+"\t\t\t\t\t<a href=\"%2$s\" class=\"button button-primary\">Select an "
+"existing page</a>\r\n"
+"\t\t\t\t\t&nbsp;\r\n"
+"\t\t\t\t\t<a href=\"%3$s\" class=\"button\">Skip setup</a>"
 msgstr ""
 
 #: pack/wolf-events/inc/admin/we-metaboxes.php:126

@@ -23,11 +23,10 @@ class WE_Admin {
 		// Includes files
 		$this->includes();
 
-		// Set metaboxes
-		$this->metaboxes();
-
 		// Admin init hooks
-		$this->admin_init_hooks();
+		//$this->admin_init_hooks();
+
+		add_action( 'admin_init', array( $this, 'admin_init_hooks' ) );
 	}
 
 	/**
@@ -49,6 +48,9 @@ class WE_Admin {
 
 		// Plugin update notifications
 		//add_action( 'admin_init', array( $this, 'plugin_update' ) );
+
+		// Set metaboxes
+		$this->metaboxes();
 
 		// Check if tour dates posts exist
 		add_action( 'admin_notices', array( $this, 'wtd_update' ) );

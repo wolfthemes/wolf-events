@@ -109,7 +109,7 @@ $metabox = array(
 				'type'  => 'url',
 			),
 
-			array(
+			'event_map' => array(
 				'label' => esc_html__( 'Google map embed code', 'wolf-events' ),
 				'desc'  => sprintf( __( '<a class="wolf-help-img" href="%s" target="_blank">Where to find it?</a>', 'wolf-events' ), WE_URI . '/assets/img/admin/google-map.jpg' ),
 				'id'    => '_wolf_event_map',
@@ -168,4 +168,4 @@ $metabox = array(
 	),
 );
 
-new WE_Admin_Metabox( $metabox );
+new WE_Admin_Metabox( apply_filters( 'wolf_event_metaboxes', $metabox ) );
