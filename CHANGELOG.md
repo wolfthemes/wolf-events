@@ -1,5 +1,9 @@
 # Changelog
 
+#### 20th November 2023 - Version 1.2.6
+
+-   Tweak: Added Event Type taxonomy support for themes
+
 #### 12th September 2022 - Version 1.2.5
 
 -   Tweak: Added height argument to we_get_iframe function
