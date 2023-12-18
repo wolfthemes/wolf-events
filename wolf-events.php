@@ -3,7 +3,7 @@
  * Plugin Name: Events
  * Plugin URI: https://wlfthm.es/wolf-events
  * Description: A plugin to manage your events.
- * Version: 1.2.6
+ * Version: 1.2.7
  * Author: WolfThemes
  * Author URI: https://wolfthemes.com
  * Requires at least: 5.0
@@ -30,7 +30,7 @@ if ( ! class_exists( 'Wolf_Events' ) ) {
 	 * Contains the main functions for Wolf_Events
 	 *
 	 * @class Wolf_Events
-	 * @version 1.2.6
+	 * @version 1.2.7
 	 * @since 1.0.0
 	 */
 	class Wolf_Events {
@@ -43,7 +43,7 @@ if ( ! class_exists( 'Wolf_Events' ) ) {
 		/**
 		 * @var string
 		 */
-		public $version = '1.2.6';
+		public $version = '1.2.7';
 
 		/**
 		 * @var Wolf Events The single instance of the class

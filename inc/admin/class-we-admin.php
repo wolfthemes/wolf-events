@@ -474,6 +474,7 @@ class WE_Admin {
 		$columns['event_place']  = esc_html__( 'Place', 'wolf-events' );
 		$columns['event_venue']  = esc_html__( 'Venue', 'wolf-events' );
 		$columns['event_status'] = esc_html__( 'Status', 'wolf-events' );
+		$columns['event_thumbnail']   = esc_html__( 'Thumbnail', 'wolf-portfolio' );
 		return $columns;
 	}
 
@@ -552,6 +553,15 @@ class WE_Admin {
 		if ( $column_name == 'event_status' ) {
 
 			if ( $status ) echo sanitize_text_field( $status );
+		}
+
+		$thumbnail = get_the_post_thumbnail();
+
+		if ( 'event_thumbnail' == $column_name ) {
+
+			if ( $thumbnail ) {
+				echo '<a href="' . get_edit_post_link() . '" title="' . esc_attr( sprintf( esc_html__( 'Edit "%s"', 'wolf-portfolio' ), get_the_title() ) ) . '">' . get_the_post_thumbnail( '', array( 60, 60 ), array( 'style' => 'max-width:60px;height:auto;' ) ) . '</a>';
+			}
 		}
 	}
 

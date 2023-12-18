@@ -213,7 +213,8 @@ class WE_Frontend {
 		$meta['phone']            = get_post_meta( $post_id, '_wolf_event_phone', true );
 		$meta['email']            = get_post_meta( $post_id, '_wolf_event_email', true );
 		$meta['website']          = get_post_meta( $post_id, '_wolf_event_website', true );
-		$meta['country']          = get_post_meta( $post_id, '_wolf_event_country_short', true );
+		$meta['country']          = get_post_meta( $post_id, '_wolf_event_country', true );
+		$meta['country_short']          = get_post_meta( $post_id, '_wolf_event_country_short', true );
 		$meta['state']            = get_post_meta( $post_id, '_wolf_event_state', true );
 
 		$artist         = get_the_term_list( get_the_ID(), 'we_artist', '', ', ', '' );

@@ -1,5 +1,9 @@
 # Changelog
 
+#### 18th December 2023 - Version 1.2.7
+
+-   Tweak: Added Event post thumbnail preview in admin list view
+
 #### 20th November 2023 - Version 1.2.6
 
 -   Tweak: Added Event Type taxonomy support for themes
