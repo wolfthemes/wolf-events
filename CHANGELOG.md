@@ -1,5 +1,9 @@
 # Changelog
 
+#### 22th April 2024 - Version 1.2.8
+
+-   Fix: Error message in debug mode when artist taxonomy does not exist
+
 #### 18th December 2023 - Version 1.2.7
 
 -   Tweak: Added Event post thumbnail preview in admin list view

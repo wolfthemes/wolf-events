@@ -217,7 +217,7 @@ class WE_Frontend {
 		$meta['country_short']          = get_post_meta( $post_id, '_wolf_event_country_short', true );
 		$meta['state']            = get_post_meta( $post_id, '_wolf_event_state', true );
 
-		$artist         = get_the_term_list( get_the_ID(), 'we_artist', '', ', ', '' );
+		$artist         = ( taxonomy_exists( 'we_artist' ) ) ? get_the_term_list( get_the_ID(), 'we_artist', '', ', ', '' ) : '';
 		$meta['artist'] = ( $artist ) ? $artist : '';
 
 		// action.
