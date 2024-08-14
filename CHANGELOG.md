@@ -1,6 +1,6 @@
 # Changelog
 
-#### 14th August 2024 - Version 1.2.8
+#### 14th August 2024 - Version 1.2.9
 
 -   Fix: Date formatting PHP error message
 
