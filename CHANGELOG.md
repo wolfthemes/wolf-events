@@ -1,8 +1,14 @@
 # Changelog
 
+<<<<<<< HEAD
 #### 14th August 2024 - Version 1.2.8
 
 -   Fix: Date formatting PHP error message
+=======
+#### 22th April 2024 - Version 1.2.8
+
+-   Fix: Error message in debug mode when artist taxonomy does not exist
+>>>>>>> 78f60f19bb82a39b124b53f28a128456c05c2e17
 
 #### 18th December 2023 - Version 1.2.7
 

@@ -4,7 +4,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Events 1.2.8\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wolf-events\n"
+<<<<<<< HEAD
 "POT-Creation-Date: 2024-08-14 08:29:39+00:00\n"
+=======
+"POT-Creation-Date: 2024-04-22 07:46:00+00:00\n"
+>>>>>>> 78f60f19bb82a39b124b53f28a128456c05c2e17
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -61,7 +65,6 @@ msgid "B"
 msgstr ""
 
 #: inc/admin/class-we-admin.php:109
-#: pack/wolf-events/inc/admin/class-we-admin.php:109
 msgid ""
 "<strong>Wolf Events</strong> is the newer version of <strong>Wolf Tour "
 "Dates</strong> plugin with more features and updates to come! Would you "
@@ -71,29 +74,25 @@ msgid ""
 msgstr ""
 
 #: inc/admin/class-we-admin.php:124
-#: pack/wolf-events/inc/admin/class-we-admin.php:124
 msgid ""
-"<br><br>\n"
+"<br><br>\r\n"
 "\t\t\t\t<a href=\"%1$s\" class=\"button button-primary\">Import tour "
-"dates</a>\n"
-"\t\t\t\t&nbsp;\n"
+"dates</a>\r\n"
+"\t\t\t\t&nbsp;\r\n"
 "\t\t\t\t<a href=\"%2$s\" class=\"button\">Skip</a>"
 msgstr ""
 
 #: inc/admin/class-we-admin.php:168
-#: pack/wolf-events/inc/admin/class-we-admin.php:168
 msgid ""
 "Your posts have been successfully imported. You can deactivate Wolf Tour "
 "Dates plugin."
 msgstr ""
 
 #: inc/admin/class-we-admin.php:179
-#: pack/wolf-events/inc/admin/class-we-admin.php:179
 msgid "Importation failed. Please try again."
 msgstr ""
 
 #: inc/admin/class-we-admin.php:325
-#: pack/wolf-events/inc/admin/class-we-admin.php:325
 msgid ""
 "says : <em>Almost done! you need to <a href=\"%1$s\">create a page</a> for "
 "your galleries or <a href=\"%2$s\">select an existing page</a> in the "
@@ -101,15 +100,14 @@ msgid ""
 msgstr ""
 
 #: inc/admin/class-we-admin.php:343
-#: pack/wolf-events/inc/admin/class-we-admin.php:343
 msgid ""
-"<br><br>\n"
+"<br><br>\r\n"
 "\t\t\t\t\t<a href=\"%1$s\" class=\"button button-primary\">Create a "
-"page</a>\n"
-"\t\t\t\t\t&nbsp;\n"
+"page</a>\r\n"
+"\t\t\t\t\t&nbsp;\r\n"
 "\t\t\t\t\t<a href=\"%2$s\" class=\"button button-primary\">Select an "
-"existing page</a>\n"
-"\t\t\t\t\t&nbsp;\n"
+"existing page</a>\r\n"
+"\t\t\t\t\t&nbsp;\r\n"
 "\t\t\t\t\t<a href=\"%3$s\" class=\"button\">Skip setup</a>"
 msgstr ""
 
@@ -118,69 +116,54 @@ msgid "Events"
 msgstr ""
 
 #: inc/admin/class-we-admin.php:405
-#: pack/wolf-events/inc/admin/class-we-admin.php:405
 msgid "Your events page has been created succesfully"
 msgstr ""
 
 #: inc/admin/class-we-admin.php:426
-#: pack/wolf-events/inc/admin/class-we-admin.php:426
 msgid "You are currently editing the page that shows the events."
 msgstr ""
 
 #: inc/admin/class-we-admin.php:473
-#: pack/wolf-events/inc/admin/class-we-admin.php:473
 msgid "Event Date"
 msgstr ""
 
 #: inc/admin/class-we-admin.php:474
-#: pack/wolf-events/inc/admin/class-we-admin.php:474
 msgid "Place"
 msgstr ""
 
 #: inc/admin/class-we-admin.php:475 inc/admin/we-metaboxes.php:39
-#: pack/wolf-events/inc/admin/class-we-admin.php:475
-#: pack/wolf-events/inc/admin/we-metaboxes.php:39
 msgid "Venue"
 msgstr ""
 
 #: inc/admin/class-we-admin.php:476
-#: pack/wolf-events/inc/admin/class-we-admin.php:476
 msgid "Status"
 msgstr ""
 
 #: inc/admin/class-we-admin.php:477
-#: pack/wolf-events/inc/admin/class-we-admin.php:477
 msgid "Thumbnail"
 msgstr ""
 
 #: inc/admin/class-we-admin.php:494
-#: pack/wolf-events/inc/admin/class-we-admin.php:494
 msgid "upcoming"
 msgstr ""
 
 #: inc/admin/class-we-admin.php:500
-#: pack/wolf-events/inc/admin/class-we-admin.php:500
 msgid "past"
 msgstr ""
 
 #: inc/admin/class-we-admin.php:504
-#: pack/wolf-events/inc/admin/class-we-admin.php:504
 msgid "cancelled"
 msgstr ""
 
 #: inc/admin/class-we-admin.php:508
-#: pack/wolf-events/inc/admin/class-we-admin.php:508
 msgid "sold out"
 msgstr ""
 
 #: inc/admin/class-we-admin.php:563
-#: pack/wolf-events/inc/admin/class-we-admin.php:563
 msgid "Edit \"%s\""
 msgstr ""
 
 #: inc/admin/class-we-admin.php:573 inc/admin/class-we-options.php:48
-#: pack/wolf-events/inc/admin/class-we-admin.php:573
-#: pack/wolf-events/inc/admin/class-we-options.php:48
 msgid "Settings"
 msgstr ""
 
@@ -188,458 +171,386 @@ msgstr ""
 #: inc/admin/class-we-metabox.php:272 inc/admin/class-we-metabox.php:452
 #: inc/admin/class-we-metabox.php:460 inc/admin/class-we-metabox.php:468
 #: inc/admin/class-we-metabox.php:477
-#: pack/wolf-events/inc/admin/class-we-metabox.php:212
-#: pack/wolf-events/inc/admin/class-we-metabox.php:227
-#: pack/wolf-events/inc/admin/class-we-metabox.php:272
-#: pack/wolf-events/inc/admin/class-we-metabox.php:452
-#: pack/wolf-events/inc/admin/class-we-metabox.php:460
-#: pack/wolf-events/inc/admin/class-we-metabox.php:468
-#: pack/wolf-events/inc/admin/class-we-metabox.php:477
 msgid "Clear"
 msgstr ""
 
 #: inc/admin/class-we-metabox.php:213 inc/admin/class-we-metabox.php:453
 #: inc/admin/class-we-metabox.php:461 inc/admin/class-we-metabox.php:469
-#: pack/wolf-events/inc/admin/class-we-metabox.php:213
-#: pack/wolf-events/inc/admin/class-we-metabox.php:453
-#: pack/wolf-events/inc/admin/class-we-metabox.php:461
-#: pack/wolf-events/inc/admin/class-we-metabox.php:469
 msgid "Choose a file"
 msgstr ""
 
 #: inc/admin/class-we-metabox.php:228 inc/admin/class-we-metabox.php:273
 #: inc/admin/class-we-metabox.php:478
-#: pack/wolf-events/inc/admin/class-we-metabox.php:228
-#: pack/wolf-events/inc/admin/class-we-metabox.php:273
-#: pack/wolf-events/inc/admin/class-we-metabox.php:478
 msgid "Choose an image"
 msgstr ""
 
 #: inc/admin/class-we-metabox.php:260
-#: pack/wolf-events/inc/admin/class-we-metabox.php:260
 msgid "Background color"
 msgstr ""
 
 #: inc/admin/class-we-metabox.php:268
-#: pack/wolf-events/inc/admin/class-we-metabox.php:268
 msgid "Background image"
 msgstr ""
 
 #: inc/admin/class-we-metabox.php:285
-#: pack/wolf-events/inc/admin/class-we-metabox.php:285
 msgid "Background repeat"
 msgstr ""
 
 #: inc/admin/class-we-metabox.php:309
-#: pack/wolf-events/inc/admin/class-we-metabox.php:309
 msgid "Background position"
 msgstr ""
 
 #: inc/admin/class-we-metabox.php:322
-#: pack/wolf-events/inc/admin/class-we-metabox.php:322
 msgid "cover (resize)"
 msgstr ""
 
 #: inc/admin/class-we-metabox.php:323 inc/admin/class-we-metabox.php:408
-#: pack/wolf-events/inc/admin/class-we-metabox.php:323
-#: pack/wolf-events/inc/admin/class-we-metabox.php:408
 msgid "normal"
 msgstr ""
 
 #: inc/admin/class-we-metabox.php:324
-#: pack/wolf-events/inc/admin/class-we-metabox.php:324
 msgid "responsive (hard resize)"
 msgstr ""
 
 #: inc/admin/class-we-metabox.php:329
-#: pack/wolf-events/inc/admin/class-we-metabox.php:329
 msgid "Background size"
 msgstr ""
 
 #: inc/admin/class-we-metabox.php:340
-#: pack/wolf-events/inc/admin/class-we-metabox.php:340
 msgid "Parallax"
 msgstr ""
 
 #: inc/admin/class-we-metabox.php:358
-#: pack/wolf-events/inc/admin/class-we-metabox.php:358
 msgid "Font color"
 msgstr ""
 
 #: inc/admin/class-we-metabox.php:368
-#: pack/wolf-events/inc/admin/class-we-metabox.php:368
 msgid "Font Family"
 msgstr ""
 
 #: inc/admin/class-we-metabox.php:370
-#: pack/wolf-events/inc/admin/class-we-metabox.php:370
 msgid "default"
 msgstr ""
 
 #: inc/admin/class-we-metabox.php:381
-#: pack/wolf-events/inc/admin/class-we-metabox.php:381
 msgid "Font weight"
 msgstr ""
 
 #: inc/admin/class-we-metabox.php:383
-#: pack/wolf-events/inc/admin/class-we-metabox.php:383
 msgid ""
 "For example: 400 is normal, 700 is bold.The available font weights depend "
 "on the font.<br>Leave empty to use the theme default style"
 msgstr ""
 
 #: inc/admin/class-we-metabox.php:389 inc/admin/class-we-metabox.php:407
-#: pack/wolf-events/inc/admin/class-we-metabox.php:389
-#: pack/wolf-events/inc/admin/class-we-metabox.php:407
 msgid "auto"
 msgstr ""
 
 #: inc/admin/class-we-metabox.php:390
-#: pack/wolf-events/inc/admin/class-we-metabox.php:390
 msgid "none"
 msgstr ""
 
 #: inc/admin/class-we-metabox.php:391
-#: pack/wolf-events/inc/admin/class-we-metabox.php:391
 msgid "uppercase"
 msgstr ""
 
 #: inc/admin/class-we-metabox.php:395
-#: pack/wolf-events/inc/admin/class-we-metabox.php:395
 msgid "Font transform"
 msgstr ""
 
 #: inc/admin/class-we-metabox.php:401
-#: pack/wolf-events/inc/admin/class-we-metabox.php:401
 msgid "\"auto\" is the default style in the theme options"
 msgstr ""
 
 #: inc/admin/class-we-metabox.php:409
-#: pack/wolf-events/inc/admin/class-we-metabox.php:409
 msgid "italic"
 msgstr ""
 
 #: inc/admin/class-we-metabox.php:413
-#: pack/wolf-events/inc/admin/class-we-metabox.php:413
 msgid "Font style"
 msgstr ""
 
 #: inc/admin/class-we-metabox.php:419
-#: pack/wolf-events/inc/admin/class-we-metabox.php:419
 msgid "\"auto\" is the default style defined in the theme options"
 msgstr ""
 
 #: inc/admin/class-we-metabox.php:426
-#: pack/wolf-events/inc/admin/class-we-metabox.php:426
 msgid "Font letter spacing (omit px)"
 msgstr ""
 
 #: inc/admin/class-we-metabox.php:428
-#: pack/wolf-events/inc/admin/class-we-metabox.php:428
 msgid "Leave empty to use the style defined in the theme options"
 msgstr ""
 
 #: inc/admin/class-we-metabox.php:450
-#: pack/wolf-events/inc/admin/class-we-metabox.php:450
 msgid "mp4 URL"
 msgstr ""
 
 #: inc/admin/class-we-metabox.php:458
-#: pack/wolf-events/inc/admin/class-we-metabox.php:458
 msgid "webm URL"
 msgstr ""
 
 #: inc/admin/class-we-metabox.php:466
-#: pack/wolf-events/inc/admin/class-we-metabox.php:466
 msgid "ogv URL"
 msgstr ""
 
 #: inc/admin/class-we-metabox.php:474
-#: pack/wolf-events/inc/admin/class-we-metabox.php:474
 msgid "Video Image Fallback"
 msgstr ""
 
 #: inc/admin/class-we-options.php:57 inc/admin/we-admin-functions.php:52
-#: pack/wolf-events/inc/admin/class-we-options.php:57
-#: pack/wolf-events/inc/admin/we-admin-functions.php:52
 msgid "Events Page"
 msgstr ""
 
 #: inc/admin/class-we-options.php:58
-#: pack/wolf-events/inc/admin/class-we-options.php:58
 msgid "Display past events in list"
 msgstr ""
 
 #: inc/admin/class-we-options.php:59
-#: pack/wolf-events/inc/admin/class-we-options.php:59
 msgid "Link to single page in list"
 msgstr ""
 
 #: inc/admin/class-we-options.php:60
-#: pack/wolf-events/inc/admin/class-we-options.php:60
 msgid "Ticket text"
 msgstr ""
 
 #: inc/admin/class-we-options.php:61
-#: pack/wolf-events/inc/admin/class-we-options.php:61
 msgid "Upcoming events text"
 msgstr ""
 
 #: inc/admin/class-we-options.php:62
-#: pack/wolf-events/inc/admin/class-we-options.php:62
 msgid "Past events text"
 msgstr ""
 
 #: inc/admin/class-we-options.php:63
-#: pack/wolf-events/inc/admin/class-we-options.php:63
 msgid "No event text"
 msgstr ""
 
 #: inc/admin/class-we-options.php:64
-#: pack/wolf-events/inc/admin/class-we-options.php:64
 msgid "Instructions"
 msgstr ""
 
 #: inc/admin/class-we-options.php:100
-#: pack/wolf-events/inc/admin/class-we-options.php:100
 msgid "- Disabled -"
 msgstr ""
 
 #: inc/admin/class-we-options.php:113
-#: pack/wolf-events/inc/admin/class-we-options.php:113
 msgid "Select a page..."
 msgstr ""
 
 #: inc/admin/class-we-options.php:148 inc/admin/class-we-options.php:224
+<<<<<<< HEAD
 #: inc/frontend/class-wolf-events.php:243
 #: pack/wolf-events/inc/admin/class-we-options.php:148
 #: pack/wolf-events/inc/admin/class-we-options.php:224
 #: pack/wolf-events/inc/frontend/class-wolf-events.php:240
+=======
+#: inc/frontend/class-wolf-events.php:240
+>>>>>>> 78f60f19bb82a39b124b53f28a128456c05c2e17
 msgid "Tickets"
 msgstr ""
 
 #: inc/admin/class-we-options.php:157 inc/admin/class-we-options.php:225
-#: pack/wolf-events/inc/admin/class-we-options.php:157
-#: pack/wolf-events/inc/admin/class-we-options.php:225
 msgid "Upcoming events"
 msgstr ""
 
 #: inc/admin/class-we-options.php:166 inc/admin/class-we-options.php:226
-#: pack/wolf-events/inc/admin/class-we-options.php:166
-#: pack/wolf-events/inc/admin/class-we-options.php:226
 msgid "Past events"
 msgstr ""
 
 #: inc/admin/class-we-options.php:175 inc/admin/class-we-options.php:227
-#: pack/wolf-events/inc/admin/class-we-options.php:175
-#: pack/wolf-events/inc/admin/class-we-options.php:227
 msgid "No upcoming event scheduled"
 msgstr ""
 
 #: inc/admin/class-we-options.php:184
-#: pack/wolf-events/inc/admin/class-we-options.php:184
 msgid ""
 "To display your event list, paste the following shortcode in a post or page "
 ":"
 msgstr ""
 
 #: inc/admin/class-we-options.php:186
-#: pack/wolf-events/inc/admin/class-we-options.php:186
 msgid "Additionally, you can add some attributes."
 msgstr ""
 
 #: inc/admin/class-we-options.php:188
-#: pack/wolf-events/inc/admin/class-we-options.php:188
 msgid "The \"past\" attribute: display the past events or not in the list"
 msgstr ""
 
 #: inc/admin/class-we-options.php:189
-#: pack/wolf-events/inc/admin/class-we-options.php:189
 msgid "The \"link\" attribute: link your events to the single page or not."
 msgstr ""
 
 #: inc/admin/class-we-options.php:199
-#: pack/wolf-events/inc/admin/class-we-options.php:199
 msgid "Events Options"
 msgstr ""
 
 #: inc/admin/class-we-options.php:202
-#: pack/wolf-events/inc/admin/class-we-options.php:202
 msgid "Settings saved."
 msgstr ""
 
 #: inc/admin/class-we-options.php:208
-#: pack/wolf-events/inc/admin/class-we-options.php:208
 msgid "Save Changes"
 msgstr ""
 
-#: inc/admin/updater.php:434 pack/wolf-events/inc/admin/updater.php:434
+#: inc/admin/updater.php:434
 msgid ""
 "The plugin has been updated, but could not be reactivated. Please "
 "reactivate it manually."
 msgstr ""
 
-#: inc/admin/updater.php:435 pack/wolf-events/inc/admin/updater.php:435
+#: inc/admin/updater.php:435
 msgid "Plugin reactivated successfully."
 msgstr ""
 
-#: inc/admin/we-metaboxes.php:21 pack/wolf-events/inc/admin/we-metaboxes.php:21
+#: inc/admin/we-metaboxes.php:21
 msgid "Event Details"
 msgstr ""
 
-#: inc/admin/we-metaboxes.php:26 pack/wolf-events/inc/admin/we-metaboxes.php:26
+#: inc/admin/we-metaboxes.php:26
 msgid "Date"
 msgstr ""
 
-#: inc/admin/we-metaboxes.php:29 pack/wolf-events/inc/admin/we-metaboxes.php:29
+#: inc/admin/we-metaboxes.php:29
 msgid "Formatted like \"dd-mm-yyyy\""
 msgstr ""
 
-#: inc/admin/we-metaboxes.php:33 pack/wolf-events/inc/admin/we-metaboxes.php:33
+#: inc/admin/we-metaboxes.php:33
 msgid "End Date"
 msgstr ""
 
-#: inc/admin/we-metaboxes.php:45 pack/wolf-events/inc/admin/we-metaboxes.php:45
+#: inc/admin/we-metaboxes.php:45
 msgid "Location"
 msgstr ""
 
-#: inc/admin/we-metaboxes.php:48 pack/wolf-events/inc/admin/we-metaboxes.php:48
+#: inc/admin/we-metaboxes.php:48
 msgid ""
 "How you want to display the location name in the list (e.g: \"Bruges, "
 "Belgium\" or \"\tNew Orleans, LA\")"
 msgstr ""
 
-#: inc/admin/we-metaboxes.php:52 pack/wolf-events/inc/admin/we-metaboxes.php:52
+#: inc/admin/we-metaboxes.php:52
 msgid "City"
 msgstr ""
 
-#: inc/admin/we-metaboxes.php:58 pack/wolf-events/inc/admin/we-metaboxes.php:58
+#: inc/admin/we-metaboxes.php:58
 msgid "Country"
 msgstr ""
 
-#: inc/admin/we-metaboxes.php:64 pack/wolf-events/inc/admin/we-metaboxes.php:64
+#: inc/admin/we-metaboxes.php:64
 msgid "Country - short ( e.g : GER for Germany )"
 msgstr ""
 
-#: inc/admin/we-metaboxes.php:70 pack/wolf-events/inc/admin/we-metaboxes.php:70
+#: inc/admin/we-metaboxes.php:70
 msgid "State"
 msgstr ""
 
-#: inc/admin/we-metaboxes.php:76 pack/wolf-events/inc/admin/we-metaboxes.php:76
+#: inc/admin/we-metaboxes.php:76
 msgid "Time"
 msgstr ""
 
-#: inc/admin/we-metaboxes.php:79 pack/wolf-events/inc/admin/we-metaboxes.php:79
+#: inc/admin/we-metaboxes.php:79
 msgid "e.g: 20:30 or 8:30PM"
 msgstr ""
 
-#: inc/admin/we-metaboxes.php:83 pack/wolf-events/inc/admin/we-metaboxes.php:83
+#: inc/admin/we-metaboxes.php:83
 msgid "Postal address"
 msgstr ""
 
-#: inc/admin/we-metaboxes.php:89 pack/wolf-events/inc/admin/we-metaboxes.php:89
+#: inc/admin/we-metaboxes.php:89
 msgid "Zip"
 msgstr ""
 
-#: inc/admin/we-metaboxes.php:96 pack/wolf-events/inc/admin/we-metaboxes.php:96
+#: inc/admin/we-metaboxes.php:96
 msgid "Phone"
 msgstr ""
 
 #: inc/admin/we-metaboxes.php:102
-#: pack/wolf-events/inc/admin/we-metaboxes.php:102
 msgid "Contact Email"
 msgstr ""
 
 #: inc/admin/we-metaboxes.php:107
-#: pack/wolf-events/inc/admin/we-metaboxes.php:107
 msgid "Contact Website"
 msgstr ""
 
 #: inc/admin/we-metaboxes.php:113
-#: pack/wolf-events/inc/admin/we-metaboxes.php:113
 msgid "Google map embed code"
 msgstr ""
 
 #: inc/admin/we-metaboxes.php:114
-#: pack/wolf-events/inc/admin/we-metaboxes.php:114
 msgid ""
 "<a class=\"wolf-help-img\" href=\"%s\" target=\"_blank\">Where to find "
 "it?</a>"
 msgstr ""
 
 #: inc/admin/we-metaboxes.php:120
-#: pack/wolf-events/inc/admin/we-metaboxes.php:120
 msgid "Facebook event page"
 msgstr ""
 
 #: inc/admin/we-metaboxes.php:126
-#: pack/wolf-events/inc/admin/we-metaboxes.php:126
 msgid "Bandsintown event page"
 msgstr ""
 
 #: inc/admin/we-metaboxes.php:132
-#: pack/wolf-events/inc/admin/we-metaboxes.php:132
 msgid "Buy Ticket link"
 msgstr ""
 
 #: inc/admin/we-metaboxes.php:139
-#: pack/wolf-events/inc/admin/we-metaboxes.php:139
 msgid "Price (e.g : $15)"
 msgstr ""
 
 #: inc/admin/we-metaboxes.php:145
-#: pack/wolf-events/inc/admin/we-metaboxes.php:145
 msgid "Currency (e.g : USD)"
 msgstr ""
 
+<<<<<<< HEAD
 #: inc/admin/we-metaboxes.php:151 inc/frontend/class-wolf-events.php:250
 #: pack/wolf-events/inc/admin/we-metaboxes.php:151
 #: pack/wolf-events/inc/frontend/class-wolf-events.php:247
+=======
+#: inc/admin/we-metaboxes.php:151 inc/frontend/class-wolf-events.php:247
+>>>>>>> 78f60f19bb82a39b124b53f28a128456c05c2e17
 msgid "Free"
 msgstr ""
 
 #: inc/admin/we-metaboxes.php:157
-#: pack/wolf-events/inc/admin/we-metaboxes.php:157
 msgid "Sold Out"
 msgstr ""
 
+<<<<<<< HEAD
 #: inc/admin/we-metaboxes.php:163 inc/frontend/class-wolf-events.php:257
 #: pack/wolf-events/inc/admin/we-metaboxes.php:163
 #: pack/wolf-events/inc/frontend/class-wolf-events.php:254
+=======
+#: inc/admin/we-metaboxes.php:163 inc/frontend/class-wolf-events.php:254
+>>>>>>> 78f60f19bb82a39b124b53f28a128456c05c2e17
 msgid "Cancelled"
 msgstr ""
 
 #: inc/class-we-event-list-widget.php:32
-#: pack/wolf-events/inc/class-we-event-list-widget.php:32
 msgid "Displays the upcoming events in a list."
 msgstr ""
 
 #: inc/class-we-event-list-widget.php:34
-#: pack/wolf-events/inc/class-we-event-list-widget.php:34
 msgid "Event list"
 msgstr ""
 
 #: inc/class-we-event-list-widget.php:97 inc/class-we-events-widget.php:86
-#: pack/wolf-events/inc/class-we-event-list-widget.php:97
-#: pack/wolf-events/inc/class-we-events-widget.php:86
 msgid "Title:"
 msgstr ""
 
 #: inc/class-we-event-list-widget.php:101
-#: pack/wolf-events/inc/class-we-event-list-widget.php:101
 msgid "Count:"
 msgstr ""
 
 #: inc/class-we-events-widget.php:32
-#: pack/wolf-events/inc/class-we-events-widget.php:32
 msgid "Displays the upcoming events with thumbnail."
 msgstr ""
 
 #: inc/frontend/class-wolf-events.php:130
-#: pack/wolf-events/inc/frontend/class-wolf-events.php:130
 msgid "No upcoming shows scheduled"
 msgstr ""
 
+<<<<<<< HEAD
 #: inc/frontend/class-wolf-events.php:263
 #: pack/wolf-events/inc/frontend/class-wolf-events.php:260
 msgid "Sold out!"
@@ -702,132 +613,157 @@ msgstr ""
 
 #: inc/frontend/class-wolf-events.php:410
 #: pack/wolf-events/inc/frontend/class-wolf-events.php:407
+=======
+#: inc/frontend/class-wolf-events.php:260
+msgid "Sold out!"
+msgstr ""
+
+#: inc/frontend/class-wolf-events.php:407
+msgid "Jan"
+msgstr ""
+
+#: inc/frontend/class-wolf-events.php:407
+msgid "Feb"
+msgstr ""
+
+#: inc/frontend/class-wolf-events.php:407
+msgid "Mar"
+msgstr ""
+
+#: inc/frontend/class-wolf-events.php:407
+msgid "Apr"
+msgstr ""
+
+#: inc/frontend/class-wolf-events.php:407
+msgid "May"
+msgstr ""
+
+#: inc/frontend/class-wolf-events.php:407
+msgid "Jun"
+msgstr ""
+
+#: inc/frontend/class-wolf-events.php:407
+msgid "Jul"
+msgstr ""
+
+#: inc/frontend/class-wolf-events.php:407
+msgid "Aug"
+msgstr ""
+
+#: inc/frontend/class-wolf-events.php:407
+msgid "Sep"
+msgstr ""
+
+#: inc/frontend/class-wolf-events.php:407
+msgid "Oct"
+msgstr ""
+
+#: inc/frontend/class-wolf-events.php:407
+msgid "Nov"
+msgstr ""
+
+#: inc/frontend/class-wolf-events.php:407
+>>>>>>> 78f60f19bb82a39b124b53f28a128456c05c2e17
 msgid "Dec"
 msgstr ""
 
 #: inc/we-register-post-type.php:19
-#: pack/wolf-events/inc/we-register-post-type.php:19
 msgid "Event"
 msgstr ""
 
 #: inc/we-register-post-type.php:20
-#: pack/wolf-events/inc/we-register-post-type.php:20
 msgid "Add New"
 msgstr ""
 
 #: inc/we-register-post-type.php:21
-#: pack/wolf-events/inc/we-register-post-type.php:21
 msgid "Add New Event"
 msgstr ""
 
 #: inc/we-register-post-type.php:22
-#: pack/wolf-events/inc/we-register-post-type.php:22
 msgid "All Events"
 msgstr ""
 
 #: inc/we-register-post-type.php:23
-#: pack/wolf-events/inc/we-register-post-type.php:23
 msgid "Edit Event"
 msgstr ""
 
 #: inc/we-register-post-type.php:24
-#: pack/wolf-events/inc/we-register-post-type.php:24
 msgid "New Event"
 msgstr ""
 
 #: inc/we-register-post-type.php:25
-#: pack/wolf-events/inc/we-register-post-type.php:25
 msgid "View Event"
 msgstr ""
 
 #: inc/we-register-post-type.php:26
-#: pack/wolf-events/inc/we-register-post-type.php:26
 msgid "Search Events"
 msgstr ""
 
 #: inc/we-register-post-type.php:27
-#: pack/wolf-events/inc/we-register-post-type.php:27
 msgid "No event found"
 msgstr ""
 
 #: inc/we-register-post-type.php:28
-#: pack/wolf-events/inc/we-register-post-type.php:28
 msgid "No event found in Trash"
 msgstr ""
 
 #: inc/we-register-taxonomy.php:18 inc/we-register-taxonomy.php:33
-#: pack/wolf-events/inc/we-register-taxonomy.php:18
-#: pack/wolf-events/inc/we-register-taxonomy.php:33
 msgid "Artists"
 msgstr ""
 
 #: inc/we-register-taxonomy.php:19
-#: pack/wolf-events/inc/we-register-taxonomy.php:19
 msgid "Artist"
 msgstr ""
 
 #: inc/we-register-taxonomy.php:20
-#: pack/wolf-events/inc/we-register-taxonomy.php:20
 msgid "Search Artists"
 msgstr ""
 
 #: inc/we-register-taxonomy.php:21
-#: pack/wolf-events/inc/we-register-taxonomy.php:21
 msgid "Popular Artists"
 msgstr ""
 
 #: inc/we-register-taxonomy.php:22
-#: pack/wolf-events/inc/we-register-taxonomy.php:22
 msgid "All Artists"
 msgstr ""
 
 #: inc/we-register-taxonomy.php:23
-#: pack/wolf-events/inc/we-register-taxonomy.php:23
 msgid "Parent Artist"
 msgstr ""
 
 #: inc/we-register-taxonomy.php:24
-#: pack/wolf-events/inc/we-register-taxonomy.php:24
 msgid "Parent Artist:"
 msgstr ""
 
 #: inc/we-register-taxonomy.php:25
-#: pack/wolf-events/inc/we-register-taxonomy.php:25
 msgid "Edit Artist"
 msgstr ""
 
 #: inc/we-register-taxonomy.php:26
-#: pack/wolf-events/inc/we-register-taxonomy.php:26
 msgid "Update Artist"
 msgstr ""
 
 #: inc/we-register-taxonomy.php:27
-#: pack/wolf-events/inc/we-register-taxonomy.php:27
 msgid "Add New Artist"
 msgstr ""
 
 #: inc/we-register-taxonomy.php:28
-#: pack/wolf-events/inc/we-register-taxonomy.php:28
 msgid "New Artist"
 msgstr ""
 
 #: inc/we-register-taxonomy.php:29
-#: pack/wolf-events/inc/we-register-taxonomy.php:29
 msgid "Separate artists with commas"
 msgstr ""
 
 #: inc/we-register-taxonomy.php:30
-#: pack/wolf-events/inc/we-register-taxonomy.php:30
 msgid "Add or remove artists"
 msgstr ""
 
 #: inc/we-register-taxonomy.php:31
-#: pack/wolf-events/inc/we-register-taxonomy.php:31
 msgid "Choose from the most used artists"
 msgstr ""
 
 #: inc/we-register-taxonomy.php:32
-#: pack/wolf-events/inc/we-register-taxonomy.php:32
 msgid "No artists found"
 msgstr ""
 
