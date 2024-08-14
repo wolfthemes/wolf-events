@@ -194,7 +194,10 @@ class WE_Frontend {
 		$start_date         = get_post_meta( $post_id, '_wolf_event_start_date', true );
 		$meta['start_date'] = ( $start_date ) ? $start_date : '2020-01-01';
 		// $meta['raw_start_date'] = $start_date . 'T' . $this->format_time( $time );
-		$meta['raw_start_date']       = date_format( date_create( $start_date . 'T' . $this->format_time( $time ) ), DATE_ISO8601 );
+
+		$date_create = date_create( $start_date . 'T' . $this->format_time( $time ) );
+		$meta['raw_start_date']       = ( $date_create ) ? date_format( $date_create, DATE_ISO8601 ) : '';
+
 		$meta['formatted_start_date'] = $this->format_date( $start_date, $this->format_time( $time ) );
 
 		// end date.

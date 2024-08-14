@@ -1,5 +1,9 @@
 # Changelog
 
+#### 14th August 2024 - Version 1.2.8
+
+-   Fix: Date formatting PHP error message
+
 #### 18th December 2023 - Version 1.2.7
 
 -   Tweak: Added Event post thumbnail preview in admin list view
@@ -15,6 +19,7 @@
 #### 11th May 2021 - Version 1.2.4
 
 -   Fix: Typo
+
 #### 31th August 2020 - Version 1.2.3
 
 -   Fix: PHP 7.4 error from we_set_custom_post_types_admin_order admin function
