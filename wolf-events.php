@@ -6,8 +6,13 @@
  * Version: 1.2.9
  * Author: WolfThemes
  * Author URI: https://wolfthemes.com
+<<<<<<< HEAD
  * Requires at least: 6.0
  * Tested up to: 6.6
+=======
+ * Requires at least: 5.0
+ * Tested up to: 5.5
+>>>>>>> 2a50d9dda4e585304f0a363007fadcda7c427caa
  *
  * Text Domain: wolf-events
  * Domain Path: /languages/

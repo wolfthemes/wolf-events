@@ -1,6 +1,10 @@
 {
 	"version": "1.2.9",
+<<<<<<< HEAD
 	"updated": "2024-09-10",
+=======
+	"updated": "2024-14-08",
+>>>>>>> 2a50d9dda4e585304f0a363007fadcda7c427caa
 	"slug": "wolf-events",
 	"name": "Events",
 	"packagename": "WolfEvents",

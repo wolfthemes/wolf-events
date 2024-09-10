@@ -4,7 +4,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Events 1.2.9\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wolf-events\n"
+<<<<<<< HEAD
 "POT-Creation-Date: 2024-09-10 09:30:25+00:00\n"
+=======
+"POT-Creation-Date: 2024-08-14 08:34:56+00:00\n"
+>>>>>>> 2a50d9dda4e585304f0a363007fadcda7c427caa
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -73,10 +77,10 @@ msgstr ""
 #: inc/admin/class-we-admin.php:124
 #: pack/wolf-events/inc/admin/class-we-admin.php:124
 msgid ""
-"<br><br>\r\n"
+"<br><br>\n"
 "\t\t\t\t<a href=\"%1$s\" class=\"button button-primary\">Import tour "
-"dates</a>\r\n"
-"\t\t\t\t&nbsp;\r\n"
+"dates</a>\n"
+"\t\t\t\t&nbsp;\n"
 "\t\t\t\t<a href=\"%2$s\" class=\"button\">Skip</a>"
 msgstr ""
 
@@ -103,13 +107,13 @@ msgstr ""
 #: inc/admin/class-we-admin.php:343
 #: pack/wolf-events/inc/admin/class-we-admin.php:343
 msgid ""
-"<br><br>\r\n"
+"<br><br>\n"
 "\t\t\t\t\t<a href=\"%1$s\" class=\"button button-primary\">Create a "
-"page</a>\r\n"
-"\t\t\t\t\t&nbsp;\r\n"
+"page</a>\n"
+"\t\t\t\t\t&nbsp;\n"
 "\t\t\t\t\t<a href=\"%2$s\" class=\"button button-primary\">Select an "
-"existing page</a>\r\n"
-"\t\t\t\t\t&nbsp;\r\n"
+"existing page</a>\n"
+"\t\t\t\t\t&nbsp;\n"
 "\t\t\t\t\t<a href=\"%3$s\" class=\"button\">Skip setup</a>"
 msgstr ""
 
@@ -411,7 +415,11 @@ msgid "Select a page..."
 msgstr ""
 
 #: inc/admin/class-we-options.php:148 inc/admin/class-we-options.php:224
+<<<<<<< HEAD
 #: inc/frontend/class-wolf-events.php:240
+=======
+#: inc/frontend/class-wolf-events.php:243
+>>>>>>> 2a50d9dda4e585304f0a363007fadcda7c427caa
 #: pack/wolf-events/inc/admin/class-we-options.php:148
 #: pack/wolf-events/inc/admin/class-we-options.php:224
 #: pack/wolf-events/inc/frontend/class-wolf-events.php:240
@@ -592,7 +600,11 @@ msgstr ""
 msgid "Currency (e.g : USD)"
 msgstr ""
 
+<<<<<<< HEAD
 #: inc/admin/we-metaboxes.php:151 inc/frontend/class-wolf-events.php:247
+=======
+#: inc/admin/we-metaboxes.php:151 inc/frontend/class-wolf-events.php:250
+>>>>>>> 2a50d9dda4e585304f0a363007fadcda7c427caa
 #: pack/wolf-events/inc/admin/we-metaboxes.php:151
 #: pack/wolf-events/inc/frontend/class-wolf-events.php:247
 msgid "Free"
@@ -603,7 +615,11 @@ msgstr ""
 msgid "Sold Out"
 msgstr ""
 
+<<<<<<< HEAD
 #: inc/admin/we-metaboxes.php:163 inc/frontend/class-wolf-events.php:254
+=======
+#: inc/admin/we-metaboxes.php:163 inc/frontend/class-wolf-events.php:257
+>>>>>>> 2a50d9dda4e585304f0a363007fadcda7c427caa
 #: pack/wolf-events/inc/admin/we-metaboxes.php:163
 #: pack/wolf-events/inc/frontend/class-wolf-events.php:254
 msgid "Cancelled"
@@ -640,67 +656,119 @@ msgstr ""
 msgid "No upcoming shows scheduled"
 msgstr ""
 
+<<<<<<< HEAD
 #: inc/frontend/class-wolf-events.php:260
+=======
+#: inc/frontend/class-wolf-events.php:263
+>>>>>>> 2a50d9dda4e585304f0a363007fadcda7c427caa
 #: pack/wolf-events/inc/frontend/class-wolf-events.php:260
 msgid "Sold out!"
 msgstr ""
 
+<<<<<<< HEAD
 #: inc/frontend/class-wolf-events.php:407
+=======
+#: inc/frontend/class-wolf-events.php:410
+>>>>>>> 2a50d9dda4e585304f0a363007fadcda7c427caa
 #: pack/wolf-events/inc/frontend/class-wolf-events.php:407
 msgid "Jan"
 msgstr ""
 
+<<<<<<< HEAD
 #: inc/frontend/class-wolf-events.php:407
+=======
+#: inc/frontend/class-wolf-events.php:410
+>>>>>>> 2a50d9dda4e585304f0a363007fadcda7c427caa
 #: pack/wolf-events/inc/frontend/class-wolf-events.php:407
 msgid "Feb"
 msgstr ""
 
+<<<<<<< HEAD
 #: inc/frontend/class-wolf-events.php:407
+=======
+#: inc/frontend/class-wolf-events.php:410
+>>>>>>> 2a50d9dda4e585304f0a363007fadcda7c427caa
 #: pack/wolf-events/inc/frontend/class-wolf-events.php:407
 msgid "Mar"
 msgstr ""
 
+<<<<<<< HEAD
 #: inc/frontend/class-wolf-events.php:407
+=======
+#: inc/frontend/class-wolf-events.php:410
+>>>>>>> 2a50d9dda4e585304f0a363007fadcda7c427caa
 #: pack/wolf-events/inc/frontend/class-wolf-events.php:407
 msgid "Apr"
 msgstr ""
 
+<<<<<<< HEAD
 #: inc/frontend/class-wolf-events.php:407
+=======
+#: inc/frontend/class-wolf-events.php:410
+>>>>>>> 2a50d9dda4e585304f0a363007fadcda7c427caa
 #: pack/wolf-events/inc/frontend/class-wolf-events.php:407
 msgid "May"
 msgstr ""
 
+<<<<<<< HEAD
 #: inc/frontend/class-wolf-events.php:407
+=======
+#: inc/frontend/class-wolf-events.php:410
+>>>>>>> 2a50d9dda4e585304f0a363007fadcda7c427caa
 #: pack/wolf-events/inc/frontend/class-wolf-events.php:407
 msgid "Jun"
 msgstr ""
 
+<<<<<<< HEAD
 #: inc/frontend/class-wolf-events.php:407
+=======
+#: inc/frontend/class-wolf-events.php:410
+>>>>>>> 2a50d9dda4e585304f0a363007fadcda7c427caa
 #: pack/wolf-events/inc/frontend/class-wolf-events.php:407
 msgid "Jul"
 msgstr ""
 
+<<<<<<< HEAD
 #: inc/frontend/class-wolf-events.php:407
+=======
+#: inc/frontend/class-wolf-events.php:410
+>>>>>>> 2a50d9dda4e585304f0a363007fadcda7c427caa
 #: pack/wolf-events/inc/frontend/class-wolf-events.php:407
 msgid "Aug"
 msgstr ""
 
+<<<<<<< HEAD
 #: inc/frontend/class-wolf-events.php:407
+=======
+#: inc/frontend/class-wolf-events.php:410
+>>>>>>> 2a50d9dda4e585304f0a363007fadcda7c427caa
 #: pack/wolf-events/inc/frontend/class-wolf-events.php:407
 msgid "Sep"
 msgstr ""
 
+<<<<<<< HEAD
 #: inc/frontend/class-wolf-events.php:407
+=======
+#: inc/frontend/class-wolf-events.php:410
+>>>>>>> 2a50d9dda4e585304f0a363007fadcda7c427caa
 #: pack/wolf-events/inc/frontend/class-wolf-events.php:407
 msgid "Oct"
 msgstr ""
 
+<<<<<<< HEAD
 #: inc/frontend/class-wolf-events.php:407
+=======
+#: inc/frontend/class-wolf-events.php:410
+>>>>>>> 2a50d9dda4e585304f0a363007fadcda7c427caa
 #: pack/wolf-events/inc/frontend/class-wolf-events.php:407
 msgid "Nov"
 msgstr ""
 
+<<<<<<< HEAD
 #: inc/frontend/class-wolf-events.php:407
+=======
+#: inc/frontend/class-wolf-events.php:410
+>>>>>>> 2a50d9dda4e585304f0a363007fadcda7c427caa
 #: pack/wolf-events/inc/frontend/class-wolf-events.php:407
 msgid "Dec"
 msgstr ""
