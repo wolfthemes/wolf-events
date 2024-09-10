@@ -62,19 +62,30 @@ function we_sanitize_iframe( $iframe ) {
 /**
  * Get custom iframe code
  *
- * @param string $iframe
+ * @param string $map_meta
  * @return string
  */
-function we_get_iframe( $iframe, $h = null ) {
+function we_get_iframe( $map_meta, $h = null ) {
 
-	if ( preg_match( '/src=("|\')?([a-zA-Z0-9:\/\'?!=.+%-_]+)("|\')?"/', $iframe, $match ) ) {
+	$error_message = esc_html__( 'Unable to display the map', 'wolf-events' );
+
+	if ( is_user_logged_in() ) {
+		$error_message .= '<br>' . esc_html__( 'Please check the event map field', 'wolf-events' );
+	}
+
+	if ( preg_match( '/src=("|\')?([a-zA-Z0-9:\/\'?!=.+%-_]+)("|\')?"/', $map_meta, $match ) ) {
 
 		if ( isset( $match[2] ) ) {
 			$src                = $match[2];
 			$h                  = ( $h ) ? $h : 250;
 
 			return '<iframe width="100%" height="' . $h . '" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="' . esc_url( $src ) . '&amp;output=embed"></iframe>';
+		} else {
+			return $error_message;
 		}
+
+	} else {
+		return $error_message;
 	}
 }
 
