@@ -1,7 +1,8 @@
 # Changelog
 
-#### 10th September 2024 - Version 1.2.9
+#### 10th September 2024 - Version 1.3.0
 
+-   Tweak: Improve Google Map iframe output
 -   Tweak: Display user error message when the event map code is incorrect
 
 #### 22th April 2024 - Version 1.2.8

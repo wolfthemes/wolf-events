@@ -77,9 +77,9 @@ function we_get_iframe( $map_meta, $h = null ) {
 
 		if ( isset( $match[2] ) ) {
 			$src                = $match[2];
-			$h                  = ( $h ) ? $h : 250;
+			$h                  = ( $h ) ? $h : 350;
 
-			return '<iframe width="100%" height="' . $h . '" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="' . esc_url( $src ) . '&amp;output=embed"></iframe>';
+			return '<iframe width="100%" height="' . $h . '" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="' . esc_url( $src ) . '"></iframe>';
 		} else {
 			return $error_message;
 		}
