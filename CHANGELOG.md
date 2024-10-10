@@ -1,5 +1,9 @@
 # Changelog
 
+#### 10th October 2024 - Version 1.3.1
+
+-   Tweak: Allow minimal HTML in ticket button text sanitization for more flexibility with we_ticket_link_text filter
+
 #### 10th September 2024 - Version 1.3.0
 
 -   Tweak: Improve Google Map iframe output

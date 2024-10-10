@@ -243,7 +243,7 @@ class WE_Frontend {
 			$action_text      = apply_filters( 'we_ticket_link_text', we_get_option( 'ticket_text', esc_html__( 'Tickets', 'wolf-events' ) ) );
 			$ticket_url_class = apply_filters( 'we_ticket_link_class', 'we-ticket-link' );
 			$target           = apply_filters( 'we_ticket_link_target', '_self' );
-			$action           = '<a target="' . esc_attr( $target ) . '" class="' . esc_attr( $ticket_url_class ) . '" href="' . esc_url( $ticket_url ) . '">' . esc_attr( $action_text ) . '</a>';
+			$action           = '<a target="' . esc_attr( $target ) . '" class="' . esc_attr( $ticket_url_class ) . '" href="' . esc_url( $ticket_url ) . '">' . wp_kses_no_null( $action_text ) . '</a>';
 		}
 
 		if ( $free && ! $cancelled && ! $soldout ) {
