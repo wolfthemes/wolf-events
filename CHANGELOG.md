@@ -1,5 +1,9 @@
 # Changelog
 
+#### 30th October 2024 - Version 1.3.2
+
+-   Improvement: Event post type query handling for custom date filtering. Added a meta join to ensure compatibility with date-based queries, preventing potential database errors and enhancing query stability.
+
 #### 10th October 2024 - Version 1.3.1
 
 -   Tweak: Allow minimal HTML in ticket button text sanitization for more flexibility with we_ticket_link_text filter
