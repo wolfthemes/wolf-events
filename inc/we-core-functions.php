@@ -272,13 +272,6 @@ function we_future_where( $where ) { // future events
 	global $wpdb;
 	$meta = $wpdb->prefix . 'postmeta';
 
-	add_filter( 'posts_join', function( $join ) use ( $wpdb ) {
-        if ( strpos( $join, "{$wpdb->postmeta}" ) === false ) {
-            $join .= " INNER JOIN {$wpdb->postmeta} ON {$wpdb->posts}.ID = {$wpdb->postmeta}.post_id";
-        }
-        return $join;
-    });
-
 	$where .= "AND (STR_TO_DATE( $meta.meta_value,'%d-%m-%Y' ) >= CURDATE())";
 	return $where;
 }
@@ -295,13 +288,16 @@ function we_past_where( $where ) { // past events
 	global $wpdb;
 	$meta = $wpdb->prefix . 'postmeta';
 
-	add_filter( 'posts_join', function( $join ) use ( $wpdb ) {
-        if ( strpos( $join, "{$wpdb->postmeta}" ) === false ) {
-            $join .= " INNER JOIN {$wpdb->postmeta} ON {$wpdb->posts}.ID = {$wpdb->postmeta}.post_id";
-        }
-        return $join;
-    });
-
 	$where .= "AND STR_TO_DATE( $meta.meta_value,'%d-%m-%Y' ) < CURDATE()";
 	return $where;
+}
+
+function we_join( $join ) {
+
+	global $wpdb;
+
+	if ( strpos( $join, "{$wpdb->postmeta}" ) === false ) {
+		$join .= " INNER JOIN {$wpdb->postmeta} ON {$wpdb->posts}.ID = {$wpdb->postmeta}.post_id";
+	}
+	return $join;
 }

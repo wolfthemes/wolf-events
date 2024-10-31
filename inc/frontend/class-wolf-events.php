@@ -451,7 +451,11 @@ class WE_Frontend {
 	public function future_events_query( $count, $artist ) {
 
 		add_filter( 'posts_orderby', 'we_order_by', 10, 1 );
+
+		add_filter( 'posts_join', 'we_join', 10, 1 );
+
 		add_filter( 'posts_where', 'we_future_where', 10, 1 );
+
 
 		$today = date( 'm-d-Y' );
 
@@ -470,6 +474,9 @@ class WE_Frontend {
 		$query = new WP_Query( $args );
 
 		remove_filter( 'posts_orderby', 'we_order_by' );
+
+		remove_filter( 'posts_join', 'we_join' );
+
 		remove_filter( 'posts_where', 'we_future_where' );
 
 		return $query;
@@ -482,7 +489,11 @@ class WE_Frontend {
 	 * @return object
 	 */
 	public function past_events_query( $count, $artist ) {
+
 		add_filter( 'posts_orderby', 'we_order_by', 10, 1 );
+
+		add_filter( 'posts_join', 'we_join', 10, 1 );
+
 		add_filter( 'posts_where', 'we_past_where', 10, 1 );
 
 		$today = date( 'm-d-Y' );
@@ -502,6 +513,9 @@ class WE_Frontend {
 		$query = new WP_Query( $args );
 
 		remove_filter( 'posts_orderby', 'we_order_by' );
+
+		remove_filter( 'posts_join', 'we_join' );
+
 		remove_filter( 'posts_where', 'we_past_where' );
 
 		return $query;
