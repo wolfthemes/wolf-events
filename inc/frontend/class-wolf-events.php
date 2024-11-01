@@ -133,36 +133,6 @@ class WE_Frontend {
 		wp_reset_postdata();
 
 		echo '</div><!-- .wolf-events -->';
-
-		// if ( $display_past_events && ! $widget ) {
-
-		// $past_events = $this->past_events_query( $count, $artist );
-
-		// if ( $past_events->have_posts() ) {
-
-		// $container_class = 'wolf-events-table wolf-past-events-table';
-
-		// echo '<h2 class="we-list-title">';
-		// echo apply_filters( 'we_past_events_text', we_get_option( 'past_events_text', esc_html__( 'Past events', 'wolf-events' ) ) );
-		// echo '</h2>';
-
-		// echo '<div class="' . esc_attr( $container_class ) . '">';
-
-		// while ( $past_events->have_posts() ) : $past_events->the_post();
-
-		// $meta = $this->get_event_meta( get_the_ID() );
-
-		// do_action( 'we_before_past_event_list', $args, $meta );
-
-		// include( WE_DIR . '/templates/event-list-item.php' );
-
-		// do_action( 'we_after_past_event_list', $args, $meta );
-
-		// endwhile;
-
-		// echo '</div><!-- .wolf-past-events -->';
-		// }
-		// } // end if display past events
 	}
 
 	/**
@@ -456,15 +426,16 @@ class WE_Frontend {
 
 		add_filter( 'posts_where', 'we_future_where', 10, 1 );
 
+		$metakey = apply_filters( 'wolf_event_date_meta_key', '_wolf_event_start_date' );
 
 		$today = date( 'm-d-Y' );
 
 		$args = array(
 			'post_type'      => 'event',
-			'meta_key'       => '_wolf_event_start_date',
+			'meta_key'       => esc_attr( $metakey ),
 			'orderby'        => 'meta_value',
 			'order'          => 'ASC',
-			'posts_per_page' => $count,
+			'posts_per_page' => esc_attr( $count ),
 		);
 
 		if ( $artist ) {
@@ -496,14 +467,16 @@ class WE_Frontend {
 
 		add_filter( 'posts_where', 'we_past_where', 10, 1 );
 
+		$metakey = apply_filters( 'wolf_event_date_meta_key', '_wolf_event_start_date' );
+
 		$today = date( 'm-d-Y' );
 
 		$args = array(
 			'post_type'      => 'event',
-			'meta_key'       => '_wolf_event_start_date',
+			'meta_key'       => esc_attr( $metakey ),
 			'orderby'        => 'meta_value',
 			'order'          => 'DESC',
-			'posts_per_page' => $count,
+			'posts_per_page' => esc_attr( $count ),
 		);
 
 		if ( $artist ) {
