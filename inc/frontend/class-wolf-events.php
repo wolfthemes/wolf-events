@@ -37,7 +37,7 @@ class WE_Frontend {
 	 * @param array $args
 	 */
 	public function events( $args = array() ) {
-		echo 'The event posts';
+		echo $this->event_list();
 	}
 
 	/**
@@ -421,20 +421,11 @@ class WE_Frontend {
 	public function future_events_query( $count, $artist ) {
 
 		add_filter( 'posts_orderby', 'we_order_by', 10, 1 );
-
-		add_filter( 'posts_join', 'we_join', 10, 1 );
-
 		add_filter( 'posts_where', 'we_future_where', 10, 1 );
-
-		$metakey = apply_filters( 'wolf_event_date_meta_key', '_wolf_event_start_date' );
-
-		$today = date( 'm-d-Y' );
 
 		$args = array(
 			'post_type'      => 'event',
-			'meta_key'       => esc_attr( $metakey ),
-			'orderby'        => 'meta_value',
-			'order'          => 'ASC',
+			'post_status'    => array( 'publish' ),
 			'posts_per_page' => esc_attr( $count ),
 		);
 
@@ -445,9 +436,6 @@ class WE_Frontend {
 		$query = new WP_Query( $args );
 
 		remove_filter( 'posts_orderby', 'we_order_by' );
-
-		remove_filter( 'posts_join', 'we_join' );
-
 		remove_filter( 'posts_where', 'we_future_where' );
 
 		return $query;
@@ -462,20 +450,13 @@ class WE_Frontend {
 	public function past_events_query( $count, $artist ) {
 
 		add_filter( 'posts_orderby', 'we_order_by', 10, 1 );
-
-		add_filter( 'posts_join', 'we_join', 10, 1 );
-
 		add_filter( 'posts_where', 'we_past_where', 10, 1 );
 
 		$metakey = apply_filters( 'wolf_event_date_meta_key', '_wolf_event_start_date' );
 
-		$today = date( 'm-d-Y' );
-
 		$args = array(
 			'post_type'      => 'event',
-			'meta_key'       => esc_attr( $metakey ),
-			'orderby'        => 'meta_value',
-			'order'          => 'DESC',
+			'post_status'    => array( 'publish' ),
 			'posts_per_page' => esc_attr( $count ),
 		);
 
@@ -486,9 +467,6 @@ class WE_Frontend {
 		$query = new WP_Query( $args );
 
 		remove_filter( 'posts_orderby', 'we_order_by' );
-
-		remove_filter( 'posts_join', 'we_join' );
-
 		remove_filter( 'posts_where', 'we_past_where' );
 
 		return $query;

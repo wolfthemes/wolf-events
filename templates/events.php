@@ -18,9 +18,7 @@ get_header( 'events' );
 	?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
-
 			<?php echo wolf_events(); ?>
-
 		<?php endwhile; // end of the loop. ?>
 
 	<?php

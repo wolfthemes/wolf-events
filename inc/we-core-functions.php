@@ -253,11 +253,76 @@ function we_clean_spaces( $string, $hard = true ) {
  * @param string $orderby
  * @return string
  */
-function we_order_by( $orderby ) {
+function we_order_by_bak( $orderby ) {
 	global $wpdb;
 	$meta = $wpdb->prefix . 'postmeta';
 	$new_orderby = str_replace( "$meta.meta_value", "STR_TO_DATE( $meta.meta_value, '%d-%m-%Y' )", $orderby );
-	return $new_orderby;
+
+    return $new_orderby;
+}
+
+function we_order_by($orderby) {
+    global $wpdb;
+
+    // Order by start date unless it's in the past, then order by end date
+    $orderby = "
+        STR_TO_DATE(
+            CASE
+                -- If start date exists and is in the future, use start date
+                WHEN EXISTS (
+                    SELECT 1
+                    FROM {$wpdb->postmeta} AS start_meta
+                    WHERE start_meta.post_id = {$wpdb->posts}.ID
+                      AND start_meta.meta_key = '_wolf_event_start_date'
+                      AND STR_TO_DATE(start_meta.meta_value, '%d-%m-%Y') >= CURDATE()
+                )
+                THEN (
+                    SELECT start_meta.meta_value
+                    FROM {$wpdb->postmeta} AS start_meta
+                    WHERE start_meta.post_id = {$wpdb->posts}.ID
+                      AND start_meta.meta_key = '_wolf_event_start_date'
+                    LIMIT 1
+                )
+                -- If start date is in the past, use the end date
+                WHEN EXISTS (
+                    SELECT 1
+                    FROM {$wpdb->postmeta} AS end_meta
+                    WHERE end_meta.post_id = {$wpdb->posts}.ID
+                      AND end_meta.meta_key = '_wolf_event_end_date'
+                )
+                THEN (
+                    SELECT end_meta.meta_value
+                    FROM {$wpdb->postmeta} AS end_meta
+                    WHERE end_meta.post_id = {$wpdb->posts}.ID
+                      AND end_meta.meta_key = '_wolf_event_end_date'
+                    LIMIT 1
+                )
+                -- Fallback to start date if no end date exists
+                ELSE (
+                    SELECT start_meta.meta_value
+                    FROM {$wpdb->postmeta} AS start_meta
+                    WHERE start_meta.post_id = {$wpdb->posts}.ID
+                      AND start_meta.meta_key = '_wolf_event_start_date'
+                    LIMIT 1
+                )
+            END, '%d-%m-%Y') ASC";
+
+    return $orderby;
+}
+
+function we_order_by_past( $orderby ) {
+	global $wpdb;
+
+    // Order by the latest date (start or end) in descending order
+    $orderby = "
+        STR_TO_DATE(
+            (SELECT start_meta.meta_value
+             FROM {$wpdb->postmeta} AS start_meta
+             WHERE start_meta.post_id = {$wpdb->posts}.ID
+               AND start_meta.meta_key = '_wolf_event_start_date'
+             LIMIT 1), '%d-%m-%Y') DESC";
+
+    return $orderby;
 }
 
 /**
@@ -272,7 +337,31 @@ function we_future_where( $where ) { // future events
 	global $wpdb;
 	$meta = $wpdb->prefix . 'postmeta';
 
-	$where .= "AND (STR_TO_DATE( $meta.meta_value,'%d-%m-%Y' ) >= CURDATE())";
+	//$where .= "AND (STR_TO_DATE( $meta.meta_value,'%d-%m-%Y' ) >= CURDATE())";
+
+	// Add condition to use start date if end date is missing
+
+    $where .= " AND (
+        (
+            EXISTS (
+                SELECT 1
+                FROM {$wpdb->postmeta} AS start_meta
+                WHERE start_meta.post_id = {$wpdb->posts}.ID
+                  AND start_meta.meta_key = '_wolf_event_start_date'
+                  AND STR_TO_DATE(start_meta.meta_value, '%d-%m-%Y') >= CURDATE()
+            )
+        )
+        OR (
+            EXISTS (
+                SELECT 1
+                FROM {$wpdb->postmeta} AS end_meta
+                WHERE end_meta.post_id = {$wpdb->posts}.ID
+                  AND end_meta.meta_key = '_wolf_event_end_date'
+                  AND STR_TO_DATE(end_meta.meta_value, '%d-%m-%Y') >= CURDATE()
+            )
+        )
+    )";
+
 	return $where;
 }
 
@@ -288,10 +377,44 @@ function we_past_where( $where ) { // past events
 	global $wpdb;
 	$meta = $wpdb->prefix . 'postmeta';
 
-	$where .= "AND STR_TO_DATE( $meta.meta_value,'%d-%m-%Y' ) < CURDATE()";
+	// $where .= "AND STR_TO_DATE( $meta.meta_value,'%d-%m-%Y' ) < CURDATE()";
+
+	$where .= " AND (
+        (
+            EXISTS (
+                SELECT 1
+                FROM {$wpdb->postmeta} AS start_meta
+                WHERE start_meta.post_id = {$wpdb->posts}.ID
+                  AND start_meta.meta_key = '_wolf_event_start_date'
+                  AND STR_TO_DATE(start_meta.meta_value, '%d-%m-%Y') < CURDATE()
+            )
+        )
+        AND (
+            NOT EXISTS (
+                SELECT 1
+                FROM {$wpdb->postmeta} AS end_meta
+                WHERE end_meta.post_id = {$wpdb->posts}.ID
+                  AND end_meta.meta_key = '_wolf_event_end_date'
+            )
+            OR EXISTS (
+                SELECT 1
+                FROM {$wpdb->postmeta} AS end_meta
+                WHERE end_meta.post_id = {$wpdb->posts}.ID
+                  AND end_meta.meta_key = '_wolf_event_end_date'
+                  AND STR_TO_DATE(end_meta.meta_value, '%d-%m-%Y') < CURDATE()
+            )
+        )
+    )";
+
 	return $where;
 }
 
+/**
+ * Obsolete
+ *
+ * @param [type] $join
+ * @return void
+ */
 function we_join( $join ) {
 
 	global $wpdb;
@@ -300,4 +423,185 @@ function we_join( $join ) {
 		$join .= " INNER JOIN {$wpdb->postmeta} ON {$wpdb->posts}.ID = {$wpdb->postmeta}.post_id";
 	}
 	return $join;
+}
+
+
+/**
+ * "where" SQL filter
+ *
+ * for current month events
+ *
+ * @param string $where
+ * @return string
+ */
+function we_current_month_where_filter( $where ) {
+	global $wpdb;
+	$meta = $wpdb->prefix . 'postmeta';
+
+	// Start and end dates for the current month
+    $current_date = date("Y-m-d");
+	$current_month_end = we_get_last_date_of_the_month( $current_date );
+
+	$where .= " AND (
+        (
+            EXISTS (
+                SELECT 1
+                FROM {$wpdb->postmeta} AS start_meta
+                WHERE start_meta.post_id = {$wpdb->posts}.ID
+                  AND start_meta.meta_key = '_wolf_event_start_date'
+                  AND STR_TO_DATE(start_meta.meta_value, '%d-%m-%Y') BETWEEN '$current_date' AND '$current_month_end'
+            )
+        )
+        OR (
+            EXISTS (
+                SELECT 1
+                FROM {$wpdb->postmeta} AS end_meta
+                WHERE end_meta.post_id = {$wpdb->posts}.ID
+                  AND end_meta.meta_key = '_wolf_event_end_date'
+                  AND STR_TO_DATE(end_meta.meta_value, '%d-%m-%Y') BETWEEN '$current_date' AND '$current_month_end'
+            )
+        )
+    )";
+
+	return $where;
+}
+
+/**
+ * "where" SQL filter
+ *
+ * for next month events
+ *
+ * @param string $where
+ * @return string
+ */
+function we_next_month_where_filter( $where ) {
+	global $wpdb;
+	$meta = $wpdb->prefix . 'postmeta';
+
+	// Start and end dates for the next month
+    $next_month_start = date('Y-m-01', strtotime('first day of next month'));
+    $next_month_end = date('Y-m-t', strtotime('last day of next month'));
+
+	 $where .= " AND (
+        (
+            EXISTS (
+                SELECT 1
+                FROM {$wpdb->postmeta} AS start_meta
+                WHERE start_meta.post_id = {$wpdb->posts}.ID
+                  AND start_meta.meta_key = '_wolf_event_start_date'
+                  AND STR_TO_DATE(start_meta.meta_value, '%d-%m-%Y') BETWEEN '$next_month_start' AND '$next_month_end'
+            )
+        )
+        OR (
+            EXISTS (
+                SELECT 1
+                FROM {$wpdb->postmeta} AS end_meta
+                WHERE end_meta.post_id = {$wpdb->posts}.ID
+                  AND end_meta.meta_key = '_wolf_event_end_date'
+                  AND STR_TO_DATE(end_meta.meta_value, '%d-%m-%Y') BETWEEN '$next_month_start' AND '$next_month_end'
+            )
+        )
+    )";
+
+	return $where;
+}
+
+/**
+ * "where" SQL filter
+ *
+ * for current month events
+ *
+ * @param string $where
+ * @return string
+ */
+function we_date_range_where( $where, $date_start, $date_end ) {
+	global $wpdb;
+
+	// Ensure the parameters are provided
+    if ( !$date_start || !$date_end) {
+        return $where; // Return the original `WHERE` clause if parameters are missing
+    }
+
+	$where .= " AND (
+        (
+            EXISTS (
+                SELECT 1
+                FROM {$wpdb->postmeta} AS start_meta
+                WHERE start_meta.post_id = {$wpdb->posts}.ID
+                  AND start_meta.meta_key = '_wolf_event_start_date'
+                  AND STR_TO_DATE(start_meta.meta_value, '%d-%m-%Y') BETWEEN '$date_start' AND '$date_end'
+            )
+        )
+        OR (
+            EXISTS (
+                SELECT 1
+                FROM {$wpdb->postmeta} AS end_meta
+                WHERE end_meta.post_id = {$wpdb->posts}.ID
+                  AND end_meta.meta_key = '_wolf_event_end_date'
+                  AND STR_TO_DATE(end_meta.meta_value, '%d-%m-%Y') BETWEEN '$date_start' AND '$date_end'
+            )
+        )
+    )";
+
+	return $where;
+}
+
+
+function we_custom_orderby($orderby) {
+    global $wpdb;
+
+	$orderby = "
+        STR_TO_DATE(
+            CASE
+                WHEN EXISTS (
+                    SELECT 1
+                    FROM {$wpdb->postmeta} AS end_meta
+                    WHERE end_meta.post_id = {$wpdb->posts}.ID
+                      AND end_meta.meta_key = '_wolf_event_end_date'
+                )
+                AND EXISTS (
+                    SELECT 1
+                    FROM {$wpdb->postmeta} AS start_meta
+                    WHERE start_meta.post_id = {$wpdb->posts}.ID
+                      AND start_meta.meta_key = '_wolf_event_start_date'
+                )
+                THEN LEAST(
+                    (SELECT STR_TO_DATE(end_meta.meta_value, '%d-%m-%Y')
+                     FROM {$wpdb->postmeta} AS end_meta
+                     WHERE end_meta.post_id = {$wpdb->posts}.ID
+                       AND end_meta.meta_key = '_wolf_event_end_date'
+                     LIMIT 1),
+                    (SELECT STR_TO_DATE(start_meta.meta_value, '%d-%m-%Y')
+                     FROM {$wpdb->postmeta} AS start_meta
+                     WHERE start_meta.post_id = {$wpdb->posts}.ID
+                       AND start_meta.meta_key = '_wolf_event_start_date'
+                     LIMIT 1)
+                )
+                ELSE STR_TO_DATE(
+                    (SELECT start_meta.meta_value
+                     FROM {$wpdb->postmeta} AS start_meta
+                     WHERE start_meta.post_id = {$wpdb->posts}.ID
+                       AND start_meta.meta_key = '_wolf_event_start_date'
+                     LIMIT 1), '%d-%m-%Y')
+            END, '%d-%m-%Y') ASC";
+
+	return $orderby;
+}
+
+/**
+ * Get last day of a month from any date in the month
+ *
+ *
+ * @param [type] $date
+ * @return void
+ * @link https://sebhastian.com/php-get-last-day-of-month/
+ */
+function we_get_last_date_of_the_month( $date ) {
+	// 👇 get the timestamp of the date
+	//$date = strtotime("2nd January 2022");
+	$date = strtotime( $date );
+	// 👇 get the last date for that month
+	$last_date = date("Y-m-t", $date);
+
+	return  $last_date; // 2022-01-31
 }
