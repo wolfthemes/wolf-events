@@ -1,5 +1,9 @@
 # Changelog
 
+#### 25th January 2024 - Version 1.3.3
+
+-   Improvement: Better handling of event start and end date filtering and sorting for more accurate event queries
+
 #### 30th October 2024 - Version 1.3.2
 
 -   Improvement: Event post type query handling for custom date filtering. Added a meta join to ensure compatibility with date-based queries, preventing potential database errors and enhancing query stability.

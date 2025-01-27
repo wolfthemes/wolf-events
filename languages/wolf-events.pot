@@ -1,14 +1,14 @@
-# Copyright (C) 2024 WolfThemes
+# Copyright (C) 2025 WolfThemes
 # This file is distributed under the same license as the Events package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Events 1.3.2\n"
+"Project-Id-Version: Events 1.3.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wolf-events\n"
-"POT-Creation-Date: 2024-11-06 11:12:13+00:00\n"
+"POT-Creation-Date: 2025-01-25 08:39:41+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2024-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2025-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "X-Generator: grunt-wp-i18n 0.5.4\n"
@@ -414,7 +414,7 @@ msgstr ""
 #: inc/frontend/class-wolf-events.php:213
 #: pack/wolf-events/inc/admin/class-we-options.php:148
 #: pack/wolf-events/inc/admin/class-we-options.php:224
-#: pack/wolf-events/inc/frontend/class-wolf-events.php:243
+#: pack/wolf-events/inc/frontend/class-wolf-events.php:213
 msgid "Tickets"
 msgstr ""
 
@@ -594,7 +594,7 @@ msgstr ""
 
 #: inc/admin/we-metaboxes.php:151 inc/frontend/class-wolf-events.php:220
 #: pack/wolf-events/inc/admin/we-metaboxes.php:151
-#: pack/wolf-events/inc/frontend/class-wolf-events.php:250
+#: pack/wolf-events/inc/frontend/class-wolf-events.php:220
 msgid "Free"
 msgstr ""
 
@@ -605,7 +605,7 @@ msgstr ""
 
 #: inc/admin/we-metaboxes.php:163 inc/frontend/class-wolf-events.php:227
 #: pack/wolf-events/inc/admin/we-metaboxes.php:163
-#: pack/wolf-events/inc/frontend/class-wolf-events.php:257
+#: pack/wolf-events/inc/frontend/class-wolf-events.php:227
 msgid "Cancelled"
 msgstr ""
 
@@ -641,67 +641,67 @@ msgid "No upcoming shows scheduled"
 msgstr ""
 
 #: inc/frontend/class-wolf-events.php:233
-#: pack/wolf-events/inc/frontend/class-wolf-events.php:263
+#: pack/wolf-events/inc/frontend/class-wolf-events.php:233
 msgid "Sold out!"
 msgstr ""
 
 #: inc/frontend/class-wolf-events.php:380
-#: pack/wolf-events/inc/frontend/class-wolf-events.php:410
+#: pack/wolf-events/inc/frontend/class-wolf-events.php:380
 msgid "Jan"
 msgstr ""
 
 #: inc/frontend/class-wolf-events.php:380
-#: pack/wolf-events/inc/frontend/class-wolf-events.php:410
+#: pack/wolf-events/inc/frontend/class-wolf-events.php:380
 msgid "Feb"
 msgstr ""
 
 #: inc/frontend/class-wolf-events.php:380
-#: pack/wolf-events/inc/frontend/class-wolf-events.php:410
+#: pack/wolf-events/inc/frontend/class-wolf-events.php:380
 msgid "Mar"
 msgstr ""
 
 #: inc/frontend/class-wolf-events.php:380
-#: pack/wolf-events/inc/frontend/class-wolf-events.php:410
+#: pack/wolf-events/inc/frontend/class-wolf-events.php:380
 msgid "Apr"
 msgstr ""
 
 #: inc/frontend/class-wolf-events.php:380
-#: pack/wolf-events/inc/frontend/class-wolf-events.php:410
+#: pack/wolf-events/inc/frontend/class-wolf-events.php:380
 msgid "May"
 msgstr ""
 
 #: inc/frontend/class-wolf-events.php:380
-#: pack/wolf-events/inc/frontend/class-wolf-events.php:410
+#: pack/wolf-events/inc/frontend/class-wolf-events.php:380
 msgid "Jun"
 msgstr ""
 
 #: inc/frontend/class-wolf-events.php:380
-#: pack/wolf-events/inc/frontend/class-wolf-events.php:410
+#: pack/wolf-events/inc/frontend/class-wolf-events.php:380
 msgid "Jul"
 msgstr ""
 
 #: inc/frontend/class-wolf-events.php:380
-#: pack/wolf-events/inc/frontend/class-wolf-events.php:410
+#: pack/wolf-events/inc/frontend/class-wolf-events.php:380
 msgid "Aug"
 msgstr ""
 
 #: inc/frontend/class-wolf-events.php:380
-#: pack/wolf-events/inc/frontend/class-wolf-events.php:410
+#: pack/wolf-events/inc/frontend/class-wolf-events.php:380
 msgid "Sep"
 msgstr ""
 
 #: inc/frontend/class-wolf-events.php:380
-#: pack/wolf-events/inc/frontend/class-wolf-events.php:410
+#: pack/wolf-events/inc/frontend/class-wolf-events.php:380
 msgid "Oct"
 msgstr ""
 
 #: inc/frontend/class-wolf-events.php:380
-#: pack/wolf-events/inc/frontend/class-wolf-events.php:410
+#: pack/wolf-events/inc/frontend/class-wolf-events.php:380
 msgid "Nov"
 msgstr ""
 
 #: inc/frontend/class-wolf-events.php:380
-#: pack/wolf-events/inc/frontend/class-wolf-events.php:410
+#: pack/wolf-events/inc/frontend/class-wolf-events.php:380
 msgid "Dec"
 msgstr ""
 
