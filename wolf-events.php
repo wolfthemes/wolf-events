@@ -87,7 +87,7 @@ if ( ! class_exists( 'Wolf_Events' ) ) {
 		public function __construct() {
 
 			$this->define_constants();
-			$this->includes();
+			//$this->includes();
 			$this->init_hooks();
 
 			do_action( 'we_loaded' );
@@ -99,7 +99,10 @@ if ( ! class_exists( 'Wolf_Events' ) ) {
 		private function init_hooks() {
 
 			add_action( 'after_setup_theme', array( $this, 'include_template_functions' ), 11 );
+
+			add_action( 'init', array( $this, 'includes' ), 0 );
 			add_action( 'init', array( $this, 'init' ), 0 );
+
 			register_activation_hook( __FILE__, array( $this, 'activate' ) );
 
 			add_action( 'admin_init', array( $this, 'plugin_update' ) );
