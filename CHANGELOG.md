@@ -1,6 +1,10 @@
 # Changelog
 
-#### 25th January 2024 - Version 1.3.3
+#### 24th April 2025 - Version 1.3.4
+
+-   Fix: Prevent loading_plugin_text notice message
+
+#### 27th January 2025 - Version 1.3.3
 
 -   Improvement: Better handling of event start and end date filtering and sorting for more accurate event queries
 
