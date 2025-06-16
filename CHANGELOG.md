@@ -1,5 +1,9 @@
 # Changelog
 
+#### 16th June 2025 - Version 1.3.5
+
+-   Improvement: Added Czech (cs_CZ) translation (Thanks to zeten30 )
+
 #### 24th April 2025 - Version 1.3.4
 
 -   Fix: Prevent loading_plugin_text notice message
